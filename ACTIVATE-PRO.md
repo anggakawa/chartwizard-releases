@@ -17,7 +17,7 @@ Setelah membayar, Lynk.id mengirim email struk berjudul **"Hi, Thanks for Your P
 
 - Order ID terdiri dari **32 karakter** (huruf a–f dan angka). Di email kodenya terpotong jadi dua baris, tapi itu satu
   kode: salin semuanya **tanpa spasi**.
-- Gambar di atas memakai kode contoh. Pakai kode dari struk kamu sendiri.
+- Order ID di gambar sengaja disensor. Pakai kode dari struk kamu sendiri.
 - **Jangan bagikan Order ID kamu.** Bersama email kamu, kode ini bisa dipakai untuk mengaktifkan lisensimu.
 
 ## 3. Aktifkan di Chartwizard
