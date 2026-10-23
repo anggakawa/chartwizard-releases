@@ -3,7 +3,7 @@
 Charting and pattern scanning for stocks on the Indonesia Stock Exchange (IDX), for Windows.
 
 **[Download the latest version](https://github.com/anggakawa/chartwizard-releases/releases/latest)**: open the page and
-download `Chartwizard Setup <version>.exe` from its Assets.
+download `Chartwizard-Setup-<version>.exe` from its Assets.
 
 New to the app? Read the [tutorials](TUTORIALS.md).
 
@@ -18,7 +18,7 @@ This repository holds the installers only; it has no source code.
 Needs Windows 10 or 11, 64-bit. Each release lists the installer's SHA-256 so you can check your download:
 
 ```powershell
-Get-FileHash "Chartwizard Setup <version>.exe" -Algorithm SHA256
+Get-FileHash .\Chartwizard-Setup-<version>.exe -Algorithm SHA256
 ```
 
 ## Free and Pro
@@ -48,7 +48,7 @@ uninstalling keeps that folder too.
 ## Bahasa Indonesia
 
 **[Unduh versi terbaru](https://github.com/anggakawa/chartwizard-releases/releases/latest)**, lalu jalankan
-`Chartwizard Setup <versi>.exe`. Jika Windows SmartScreen memperingatkan, pilih **More info → Run anyway**.
+`Chartwizard-Setup-<versi>.exe`. Jika Windows SmartScreen memperingatkan, pilih **More info → Run anyway**.
 
 Untuk Pro: beli di Lynk.id ([bulanan](https://lynk.id/codewizard/0j4z82e188gn) atau
 [tahunan](https://lynk.id/codewizard/jr2qg5k48m85)), lalu buka **Settings → Licence** dan masukkan email pembayaran
