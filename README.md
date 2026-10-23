@@ -36,7 +36,7 @@ Buy Pro on Lynk.id: [monthly](https://lynk.id/codewizard/0j4z82e188gn) or [yearl
 One licence covers 2 PCs.
 
 **Activate:** in Chartwizard, open **Settings → Licence** and enter the email you paid with and the order ID from your
-Lynk.id receipt. To renew, buy again with the same email, then choose **Refresh** there.
+Lynk.id receipt. To renew, buy again with the same email, then choose **Refresh** there. Step by step, with pictures: [how to activate Pro](ACTIVATE-PRO.md).
 
 ## Update
 
@@ -52,6 +52,6 @@ uninstalling keeps that folder too.
 
 Untuk Pro: beli di Lynk.id ([bulanan](https://lynk.id/codewizard/0j4z82e188gn) atau
 [tahunan](https://lynk.id/codewizard/jr2qg5k48m85)), lalu buka **Settings → Licence** dan masukkan email pembayaran
-serta order ID dari struk Lynk.id. Satu lisensi untuk 2 PC.
+serta order ID dari struk Lynk.id. Satu lisensi untuk 2 PC. Panduan lengkap dengan gambar: [cara mengaktifkan Pro](ACTIVATE-PRO.md).
 
 Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi. / Chartwizard is charting software, not investment advice.

@@ -151,6 +151,8 @@ provides and Yahoo Finance does not.
 
 ## 8. Activate Pro
 
+The step-by-step guide with pictures, in Indonesian and English, is [how to activate Pro](ACTIVATE-PRO.md).
+
 1. Buy Pro on Lynk.id: [monthly](https://lynk.id/codewizard/0j4z82e188gn) or
    [yearly](https://lynk.id/codewizard/jr2qg5k48m85).
 2. In Chartwizard, open **Settings → Licence**.
