@@ -40,8 +40,14 @@ Lynk.id receipt. To renew, buy again with the same email, then choose **Refresh*
 
 ## Update
 
-Download the new installer and run it over the old one. Your data and licence stay in `%APPDATA%\idx-chart`, and
-uninstalling keeps that folder too.
+From version 0.3.0, Chartwizard updates itself. It checks for a new version shortly after it starts and every few hours,
+downloads it in the background, and shows **Restart now** in the status bar when it is ready. Nothing installs until you
+click it. To turn automatic checks off, or to check by hand, open **Settings → Updates**.
+
+On 0.1.0 or 0.2.0? Download [the latest version](https://github.com/anggakawa/chartwizard-releases/releases/latest) and
+run it over the old one once; updates come by themselves after that.
+
+Your data and licence stay in `%APPDATA%\idx-chart`, and uninstalling keeps that folder too.
 
 ---
 
@@ -49,6 +55,9 @@ uninstalling keeps that folder too.
 
 **[Unduh versi terbaru](https://github.com/anggakawa/chartwizard-releases/releases/latest)**, lalu jalankan
 `Chartwizard-Setup-<versi>.exe`. Jika Windows SmartScreen memperingatkan, pilih **More info → Run anyway**.
+
+Mulai versi 0.3.0, Chartwizard memperbarui dirinya sendiri: pembaruan diunduh di latar belakang, lalu klik **Restart now**
+di bilah status untuk memasangnya. Pengaturannya ada di **Settings → Updates**.
 
 Untuk Pro: beli di Lynk.id ([bulanan](https://lynk.id/codewizard/0j4z82e188gn) atau
 [tahunan](https://lynk.id/codewizard/jr2qg5k48m85)), lalu buka **Settings → Licence** dan masukkan email pembayaran
