@@ -1,5 +1,5 @@
 # Every string the layout and the download page show, in Indonesian (id) and English (en).
-# Strings may hold HTML. {file} is replaced with the installer's file name.
+# Strings may hold HTML. %file% is replaced with the installer's file name.
 id:
   description: Grafik dan pemindai pola untuk saham Bursa Efek Indonesia, untuk Windows. Unduh gratis.
   nav_download: Unduh
@@ -28,7 +28,7 @@ id:
   install_steps:
     - title: Jalankan file yang diunduh
       body: >-
-        Buka <code>{file}</code> dari folder Downloads, lalu ikuti langkah pemasangan sampai selesai.
+        Buka <code>%file%</code> dari folder Downloads, lalu ikuti langkah pemasangan sampai selesai.
     - title: Windows memperingatkan? Itu wajar
       body: >-
         Installer Chartwizard belum memiliki tanda tangan digital (code signing), jadi Windows SmartScreen bisa
@@ -127,7 +127,7 @@ en:
   install_steps:
     - title: Run the downloaded file
       body: >-
-        Open <code>{file}</code> from your Downloads folder and follow the installer to the end.
+        Open <code>%file%</code> from your Downloads folder and follow the installer to the end.
     - title: Windows shows a warning? That's expected
       body: >-
         The Chartwizard installer is not code-signed yet, so Windows SmartScreen may show a blue

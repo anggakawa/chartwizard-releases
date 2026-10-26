@@ -44,7 +44,7 @@
       {%- for step in t.install_steps %}
       <li class="step{% if step.note %} callout{% endif %}">
         <h3>{{ step.title }}</h3>
-        <p>{{ step.body | replace: '{file}', file }}</p>
+        <p>{{ step.body | replace: '%file%', file }}</p>
         {%- if step.note %}
         <p class="step-note">{{ step.note }}</p>
         <!-- SmartScreen screenshot: add images/smartscreen.png, then uncomment the next line. -->
