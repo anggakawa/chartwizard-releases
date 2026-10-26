@@ -1,0 +1,121 @@
+{%- comment -%}
+  The download page, shared by index.html (Indonesian) and en/index.html (English).
+  Text comes from _data/i18n.yml; the release comes from _data/release.json, written by the Pages workflow.
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign r = site.data.release -%}
+{%- if r -%}
+  {%- assign href = r.url -%}
+  {%- assign file = r.url | split: '/' | last -%}
+  {%- assign month_index = r.month | minus: 1 -%}
+{%- else -%}
+  {%- assign href = 'https://github.com/anggakawa/chartwizard-releases/releases/latest' -%}
+  {%- assign file = t.file_fallback -%}
+{%- endif -%}
+
+<section class="hero" id="download">
+  <div class="wrap hero-inner">
+    <img class="hero-logo" src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="72" height="72">
+    <h1>Chartwizard</h1>
+    <p class="hero-tagline">{{ t.hero_tagline }}</p>
+    <p class="hero-intro">{{ t.hero_intro }}</p>
+
+    <a class="btn btn-primary btn-download" href="{{ href }}"{% if r %} download{% endif %}>
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+      {{ t.download_button }}
+    </a>
+
+    {%- if r %}
+    <p class="release-meta">
+      <span>{{ t.version_label }}&nbsp;{{ r.version }}</span> · <span>{{ r.size_mb }}&nbsp;MB</span> · <span>{{ t.requirements }}</span> · <span>{{ r.day }}&nbsp;{{ t.months[month_index] }}&nbsp;{{ r.year }}</span>
+    </p>
+    {%- endif %}
+    <p class="all-versions"><a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a></p>
+
+    <!-- Screenshot of the app: add images/app.png, then uncomment the next line. -->
+    <!-- <img class="hero-shot" src="{{ '/images/app.png' | relative_url }}" alt="Chartwizard" width="1280" height="800"> -->
+  </div>
+</section>
+
+<section class="section" id="install">
+  <div class="wrap">
+    <h2>{{ t.install_title }}</h2>
+    <ol class="steps">
+      {%- for step in t.install_steps %}
+      <li class="step{% if step.note %} callout{% endif %}">
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.body | replace: '%file%', file }}</p>
+        {%- if step.note %}
+        <p class="step-note">{{ step.note }}</p>
+        <!-- SmartScreen screenshot: add images/smartscreen.png, then uncomment the next line. -->
+        <!-- <img src="{{ '/images/smartscreen.png' | relative_url }}" alt="Windows protected your PC: More info, Run anyway" width="640" height="480"> -->
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-soft" id="features">
+  <div class="wrap">
+    <h2>{{ t.features_title }}</h2>
+    <div class="feature-grid">
+      {%- for f in t.features %}
+      <div class="card">
+        <h3>{{ f.title }}{% if f.pro %} <span class="badge">Pro</span>{% endif %}</h3>
+        <p>{{ f.body }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pro">
+  <div class="wrap">
+    <h2>{{ t.pricing_title }}</h2>
+    <div class="table-scroll">
+      <table class="pricing">
+        <thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead>
+        <tbody>
+          {%- for row in t.pricing_rows %}
+          <tr>
+            <th scope="row">{{ row[0] }}</th>
+            {%- for cell in row offset: 1 %}
+            <td>{% if cell == 'yes' %}<span class="yes">✓</span> {{ t.yes_word }}{% elsif cell == '' %}<span class="no" aria-hidden="true">–</span>{% else %}{{ cell }}{% endif %}</td>
+            {%- endfor %}
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="buy">
+      <a class="btn btn-primary" href="https://lynk.id/codewizard/0j4z82e188gn">{{ t.buy_monthly }}</a>
+      <a class="btn btn-secondary" href="https://lynk.id/codewizard/jr2qg5k48m85">{{ t.buy_yearly }}</a>
+    </div>
+    <p class="buy-note">{{ t.seats }} <a href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
+  </div>
+</section>
+
+<section class="section section-soft" id="faq">
+  <div class="wrap">
+    <h2>{{ t.faq_title }}</h2>
+    <div class="faq">
+      {%- for item in t.faq %}
+      <details>
+        <summary>{{ item.q }}</summary>
+        <p>{{ item.a }}</p>
+      </details>
+      {%- endfor %}
+    </div>
+
+    {%- if r and r.sha256 != '' %}
+    <details class="verify" id="verify">
+      <summary>{{ t.verify_title }}</summary>
+      <p>{{ t.verify_hash_label }}</p>
+      <p><code class="hash">{{ r.sha256 }}</code></p>
+      <p>{{ t.verify_command_label }}</p>
+      <pre><code>Get-FileHash .\{{ file }} -Algorithm SHA256</code></pre>
+    </details>
+    {%- endif %}
+  </div>
+</section>

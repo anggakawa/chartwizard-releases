@@ -1,0 +1,27 @@
+# The download site, built by .github/workflows/pages.yml.
+title: Chartwizard
+baseurl: /chartwizard-releases
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - .github
+  # The GitHub front page; the download page replaces it on the site.
+  - README.md
+
+# Publish the guides as .html only, not also as raw .md files.
+optional_front_matter:
+  remove_originals: true
+
+# The guides stay plain Markdown (GitHub shows front matter as a table), so their layout,
+# language and other-language page are set here.
+defaults:
+  - scope: { path: "TUTORIALS-ID.md" }
+    values: { layout: doc, lang: id, alt_url: TUTORIALS.html }
+  - scope: { path: "TUTORIALS.md" }
+    values: { layout: doc, lang: en, alt_url: TUTORIALS-ID.html }
+  - scope: { path: "ACTIVATE-PRO.md" }
+    values: { layout: doc, lang: id, alt_url: "ACTIVATE-PRO.html#english" }

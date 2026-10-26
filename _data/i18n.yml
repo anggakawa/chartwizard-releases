@@ -1,0 +1,200 @@
+# Every string the layout and the download page show, in Indonesian (id) and English (en).
+# Strings may hold HTML. %file% is replaced with the installer's file name.
+id:
+  description: Grafik dan pemindai pola untuk saham Bursa Efek Indonesia, untuk Windows. Unduh gratis.
+  nav_download: Unduh
+  nav_guide: Panduan
+  nav_activate: Aktivasi Pro
+  switch_label: EN
+  switch_title: Read in English
+  home_url: /
+  guide_url: TUTORIALS-ID.html
+  activate_url: ACTIVATE-PRO.html
+  footer_disclaimer: Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi.
+  footer_github: Rilis di GitHub
+  months: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agu, Sep, Okt, Nov, Des]
+
+  hero_tagline: Grafik dan pemindai pola saham BEI, untuk Windows.
+  hero_intro: >-
+    Lihat grafik setiap saham di Bursa Efek Indonesia, temukan pola chart secara otomatis, dan pantau sektor mana yang
+    sedang menguat. Gratis dipakai, dengan fitur lengkap di Pro.
+  download_button: Unduh untuk Windows
+  version_label: Versi
+  requirements: Windows 10/11 64-bit
+  all_versions: Semua versi
+  file_fallback: Chartwizard-Setup-&lt;versi&gt;.exe
+
+  install_title: Cara memasang
+  install_steps:
+    - title: Jalankan file yang diunduh
+      body: >-
+        Buka <code>%file%</code> dari folder Downloads, lalu ikuti langkah pemasangan sampai selesai.
+    - title: Windows memperingatkan? Itu wajar
+      body: >-
+        Installer Chartwizard belum memiliki tanda tangan digital (code signing), jadi Windows SmartScreen bisa
+        menampilkan layar biru <b>Windows protected your PC</b>. Klik <b>More info</b>, lalu <b>Run anyway</b>.
+      note: >-
+        Peringatan ini muncul untuk setiap aplikasi yang belum ditandatangani, bukan karena ada virus. Ingin
+        memastikan filenya asli? Cocokkan SHA-256-nya di bagian bawah halaman ini.
+    - title: Pilih sumber data
+      body: >-
+        Buka <b>Settings → Data provider</b>. <b>Yahoo Finance</b> tidak perlu token; <b>EODHD</b> memakai API token
+        milikmu sendiri. Sinkronisasi pertama mengunduh riwayat harga, lalu data diperbarui otomatis setiap hari
+        setelah pasar tutup.
+
+  features_title: Fitur
+  features:
+    - title: Grafik dan pola
+      body: >-
+        Candlestick, volume dan RSI, indikator seperti MACD, Bollinger Bands dan Supertrend, alat gambar, serta pola
+        yang ditemukan otomatis: pola klasik, support/resistance, pola candlestick dan divergensi RSI.
+    - title: Scanner
+      body: >-
+        Semua setup yang sedang aktif di seluruh saham BEI dalam satu daftar, dengan filter likuiditas, lonjakan
+        volume dan konfirmasi.
+    - title: Screener
+      pro: true
+      body: >-
+        Saring saham berdasarkan harga, return, tren, volume dan fundamental, atau pakai preset seperti Top Gainers,
+        Unusual Volume dan Low P/E.
+    - title: Rotasi sektor
+      pro: true
+      body: >-
+        Lihat sektor mana yang menguat atau melemah dibanding IHSG, beserta saham terkuat di setiap sektor. Butuh data
+        sektor dari EODHD; Yahoo Finance tidak menyediakannya.
+
+  pricing_title: Free dan Pro
+  yes_word: Ya
+  pricing_rows:
+    - ["Grafik: indikator, gambar, pola dan level", "yes", "yes"]
+    - ["Sinkronisasi otomatis harian", "yes", "yes"]
+    - ["Scanner", "5 setup teratas", "Semua setup dan filter"]
+    - ["Screener dan Sektor", "", "yes"]
+    - ["Ekspor CSV", "", "yes"]
+    - ["Bar intraday live", "", "yes"]
+  buy_monthly: Beli bulanan
+  buy_yearly: Beli tahunan
+  seats: Satu lisensi untuk 2 PC. Pembayaran lewat Lynk.id.
+  activate_link: Cara mengaktifkan Pro
+
+  faq_title: Pertanyaan umum
+  faq:
+    - q: Aman tidak? Kenapa Windows memperingatkan?
+      a: >-
+        Installer Chartwizard belum ditandatangani secara digital, dan SmartScreen memperingatkan setiap aplikasi
+        seperti itu. Unduh hanya dari halaman ini atau dari halaman rilis di GitHub, dan cocokkan SHA-256-nya jika
+        ingin memastikan.
+    - q: Bagaimana cara memperbarui?
+      a: >-
+        Mulai versi 0.3.0, Chartwizard memperbarui dirinya sendiri: versi baru diunduh di latar belakang, lalu klik
+        <b>Restart now</b> di bilah status untuk memasangnya. Masih memakai 0.1.0 atau 0.2.0? Unduh versi terbaru di
+        atas dan pasang sekali di atas versi lama; setelah itu pembaruan datang sendiri.
+    - q: Di mana data saya disimpan?
+      a: >-
+        Semuanya ada di PC kamu, di folder <code>%APPDATA%\idx-chart</code>: harga, pengaturan, lisensi dan cadangan
+        harian. Uninstall tidak menghapus folder ini, jadi memasang ulang melanjutkan dari data yang sama.
+    - q: Windows apa saja yang didukung?
+      a: Windows 10 dan 11, 64-bit. Belum ada versi untuk macOS atau Linux.
+
+  verify_title: Periksa file unduhan
+  verify_hash_label: "SHA-256 installer versi ini:"
+  verify_command_label: "Di PowerShell, jalankan perintah ini di folder tempat file tersimpan, lalu cocokkan hasilnya:"
+
+en:
+  description: Charting and pattern scanning for Indonesia Stock Exchange stocks, for Windows. Free download.
+  nav_download: Download
+  nav_guide: Guide
+  nav_activate: Activate Pro
+  switch_label: ID
+  switch_title: Baca dalam Bahasa Indonesia
+  home_url: /en/
+  guide_url: TUTORIALS.html
+  activate_url: "ACTIVATE-PRO.html#english"
+  footer_disclaimer: Chartwizard is charting software, not investment advice.
+  footer_github: Releases on GitHub
+  months: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+
+  hero_tagline: Charting and pattern scanning for IDX stocks, for Windows.
+  hero_intro: >-
+    Chart every stock on the Indonesia Stock Exchange, find chart patterns automatically, and see which sectors are
+    gaining strength. Free to use, with everything unlocked in Pro.
+  download_button: Download for Windows
+  version_label: Version
+  requirements: Windows 10/11 64-bit
+  all_versions: All versions
+  file_fallback: Chartwizard-Setup-&lt;version&gt;.exe
+
+  install_title: How to install
+  install_steps:
+    - title: Run the downloaded file
+      body: >-
+        Open <code>%file%</code> from your Downloads folder and follow the installer to the end.
+    - title: Windows shows a warning? That's expected
+      body: >-
+        The Chartwizard installer is not code-signed yet, so Windows SmartScreen may show a blue
+        <b>Windows protected your PC</b> screen. Click <b>More info</b>, then <b>Run anyway</b>.
+      note: >-
+        Windows shows this for every app that isn't signed, not because it found a virus. Want to be sure the file is
+        genuine? Compare its SHA-256 at the bottom of this page.
+    - title: Choose a data provider
+      body: >-
+        Open <b>Settings → Data provider</b>. <b>Yahoo Finance</b> needs no token; <b>EODHD</b> uses your own API
+        token. The first sync downloads the price history, and after that the data updates by itself every day after
+        the market closes.
+
+  features_title: Features
+  features:
+    - title: Charts and patterns
+      body: >-
+        Candles, volume and RSI, indicators such as MACD, Bollinger Bands and Supertrend, drawing tools, and patterns
+        found automatically: classic patterns, support/resistance, candlestick patterns and RSI divergences.
+    - title: Scanner
+      body: >-
+        Every live setup across all IDX stocks in one list, with filters for liquidity, volume spikes and
+        confirmation.
+    - title: Screener
+      pro: true
+      body: >-
+        Filter stocks by price, returns, trend, volume and fundamentals, or start from presets such as Top Gainers,
+        Unusual Volume and Low P/E.
+    - title: Sector rotation
+      pro: true
+      body: >-
+        See which sectors are gaining or losing strength against IHSG, and each sector's strongest stocks. Needs sector
+        data from EODHD; Yahoo Finance has none.
+
+  pricing_title: Free and Pro
+  yes_word: "Yes"
+  pricing_rows:
+    - ["Chart: indicators, drawings, patterns and levels", "yes", "yes"]
+    - ["Daily auto-sync", "yes", "yes"]
+    - ["Scanner", "The top 5 setups", "Every setup and filter"]
+    - ["Screener and Sectors", "", "yes"]
+    - ["CSV export", "", "yes"]
+    - ["Live intraday bars", "", "yes"]
+  buy_monthly: Buy monthly
+  buy_yearly: Buy yearly
+  seats: One licence covers 2 PCs. Payment through Lynk.id.
+  activate_link: How to activate Pro
+
+  faq_title: Common questions
+  faq:
+    - q: Is it safe? Why does Windows warn me?
+      a: >-
+        The installer is not code-signed yet, and SmartScreen warns about every app like that. Download it only from
+        this page or the GitHub releases page, and compare its SHA-256 if you want to be sure.
+    - q: How do I update?
+      a: >-
+        From version 0.3.0, Chartwizard updates itself: the new version downloads in the background, and you click
+        <b>Restart now</b> in the status bar to install it. On 0.1.0 or 0.2.0? Download the latest version above and
+        install it over the old one once; updates come by themselves after that.
+    - q: Where is my data kept?
+      a: >-
+        All of it stays on your PC, in <code>%APPDATA%\idx-chart</code>: prices, settings, your licence and a daily
+        backup. Uninstalling keeps that folder, so reinstalling picks up where you left off.
+    - q: Which Windows versions does it run on?
+      a: Windows 10 and 11, 64-bit. There is no macOS or Linux version.
+
+  verify_title: Check your download
+  verify_hash_label: "The SHA-256 of this version's installer:"
+  verify_command_label: "In PowerShell, run this in the folder where the file is saved, and compare the result:"
