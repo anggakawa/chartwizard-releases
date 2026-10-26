@@ -15,8 +15,9 @@ permissions:
   pages: write
   id-token: write
 
+# Deploys queue one at a time. Pull requests get their own group, so a PR push never cancels a pending release deploy.
 concurrency:
-  group: pages
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.ref) || 'pages' }}
   cancel-in-progress: false
 
 jobs:

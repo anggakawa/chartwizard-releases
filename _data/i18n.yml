@@ -60,7 +60,8 @@ id:
     - title: Rotasi sektor
       pro: true
       body: >-
-        Lihat sektor mana yang menguat atau melemah dibanding IHSG, beserta saham terkuat di setiap sektor.
+        Lihat sektor mana yang menguat atau melemah dibanding IHSG, beserta saham terkuat di setiap sektor. Butuh data
+        sektor dari EODHD; Yahoo Finance tidak menyediakannya.
 
   pricing_title: Free dan Pro
   yes_word: Ya
@@ -159,7 +160,8 @@ en:
     - title: Sector rotation
       pro: true
       body: >-
-        See which sectors are gaining or losing strength against IHSG, and each sector's strongest stocks.
+        See which sectors are gaining or losing strength against IHSG, and each sector's strongest stocks. Needs sector
+        data from EODHD; Yahoo Finance has none.
 
   pricing_title: Free and Pro
   yes_word: "Yes"
