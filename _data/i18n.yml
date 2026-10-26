@@ -1,0 +1,28 @@
+# Every string the layout and the download page show, in Indonesian (id) and English (en).
+id:
+  description: Grafik dan pemindai pola untuk saham Bursa Efek Indonesia, untuk Windows. Unduh gratis.
+  nav_download: Unduh
+  nav_guide: Panduan
+  nav_activate: Aktivasi Pro
+  switch_label: EN
+  switch_title: Read in English
+  home_url: /
+  guide_url: TUTORIALS-ID.html
+  activate_url: ACTIVATE-PRO.html
+  footer_disclaimer: Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi.
+  footer_github: Rilis di GitHub
+  months: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agu, Sep, Okt, Nov, Des]
+
+en:
+  description: Charting and pattern scanning for Indonesia Stock Exchange stocks, for Windows. Free download.
+  nav_download: Download
+  nav_guide: Guide
+  nav_activate: Activate Pro
+  switch_label: ID
+  switch_title: Baca dalam Bahasa Indonesia
+  home_url: /en/
+  guide_url: TUTORIALS.html
+  activate_url: "ACTIVATE-PRO.html#english"
+  footer_disclaimer: Chartwizard is charting software, not investment advice.
+  footer_github: Releases on GitHub
+  months: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
