@@ -10,6 +10,10 @@ kramdown:
 exclude:
   - .github
 
+# Publish the guides as .html only, not also as raw .md files.
+optional_front_matter:
+  remove_originals: true
+
 # The guides stay plain Markdown (GitHub shows front matter as a table), so their layout,
 # language and other-language page are set here.
 defaults:
