@@ -195,7 +195,9 @@ pre code { background: none; padding: 0; }
   padding-bottom: 56px;
 }
 
-.hero-logo { border-radius: 16px; box-shadow: var(--shadow); }
+.hero-logo { border-radius: 16px; box-shadow: var(--shadow), 0 0 0 1px var(--border); }
+
+.release-meta span { white-space: nowrap; }
 
 .hero h1 {
   font-size: 2.6rem;

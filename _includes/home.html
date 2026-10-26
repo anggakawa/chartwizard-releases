@@ -27,7 +27,7 @@
 
     {%- if r %}
     <p class="release-meta">
-      {{ t.version_label }} {{ r.version }} · {{ r.size_mb }} MB · {{ t.requirements }} · {{ r.day }} {{ t.months[month_index] }} {{ r.year }}
+      <span>{{ t.version_label }}&nbsp;{{ r.version }}</span> · <span>{{ r.size_mb }}&nbsp;MB</span> · <span>{{ t.requirements }}</span> · <span>{{ r.day }}&nbsp;{{ t.months[month_index] }}&nbsp;{{ r.year }}</span>
     </p>
     {%- endif %}
     <p class="all-versions"><a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a></p>
