@@ -1,0 +1,20 @@
+# A snapshot of the scanner, for the strip under the hero. Taken from the app's own scanner on the date below.
+date: 20261027
+chart: {"code":"BBCA","name":"Bank Central Asia Tbk","o":"4,940","h":"4,980","l":"4,800","c":"4,900","up":false,"change":"−40","pct":"−0.81%","pattern_date":"2026-10-20","score":"0.59","target":"8,960","invalidation":"4,740"}
+setups:
+  - { code: MMIX, pattern: "Double bottom", bias: bullish, status: confirmed }
+  - { code: ASLI, pattern: "Head and shoulders", bias: bearish, status: forming }
+  - { code: TOBA, pattern: "Rectangle", bias: neutral, status: forming }
+  - { code: ITMG, pattern: "Double top", bias: bearish, status: forming }
+  - { code: SMLE, pattern: "Cup and handle", bias: bullish, status: confirmed }
+  - { code: INKP, pattern: "Bear pennant", bias: bearish, status: breakout }
+  - { code: INTP, pattern: "Rectangle", bias: neutral, status: forming }
+  - { code: JARR, pattern: "Bear flag", bias: bearish, status: breakout }
+  - { code: CMNT, pattern: "Double bottom", bias: bullish, status: forming }
+  - { code: BDMN, pattern: "Double top", bias: bearish, status: forming }
+  - { code: JECX, pattern: "Double bottom", bias: bullish, status: forming }
+  - { code: MBSS, pattern: "Double top", bias: bearish, status: forming }
+  - { code: ANDI, pattern: "Rectangle", bias: neutral, status: forming }
+  - { code: GGRM, pattern: "Head and shoulders", bias: bearish, status: forming }
+  - { code: SMRA, pattern: "Regular bullish RSI", bias: bullish, status: breakout }
+  - { code: PGEO, pattern: "Double top", bias: bearish, status: forming }

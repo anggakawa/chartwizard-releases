@@ -20,8 +20,8 @@ optional_front_matter:
 # language and other-language page are set here.
 defaults:
   - scope: { path: "TUTORIALS-ID.md" }
-    values: { layout: doc, lang: id, alt_url: TUTORIALS.html }
+    values: { layout: doc, lang: id, nav: guide, alt_url: TUTORIALS.html }
   - scope: { path: "TUTORIALS.md" }
-    values: { layout: doc, lang: en, alt_url: TUTORIALS-ID.html }
+    values: { layout: doc, lang: en, nav: guide, alt_url: TUTORIALS-ID.html }
   - scope: { path: "ACTIVATE-PRO.md" }
-    values: { layout: doc, lang: id, alt_url: "ACTIVATE-PRO.html#english" }
+    values: { layout: doc, lang: id, nav: activate, alt_url: "ACTIVATE-PRO.html#english" }

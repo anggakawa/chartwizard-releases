@@ -7,24 +7,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}Chartwizard</title>
   <meta name="description" content="{{ t.description }}">
+  <meta name="theme-color" content="#131722">
+  <meta name="color-scheme" content="dark">
   <link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap">
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-row">
       <a class="brand" href="{{ t.home_url | relative_url }}">
-        <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="32" height="32">
+        <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="26" height="26">
         <span>Chartwizard</span>
       </a>
-      <nav class="site-nav" aria-label="{{ t.nav_guide }}">
-        <a href="{{ t.home_url | relative_url }}#download">{{ t.nav_download }}</a>
-        <a href="{{ t.guide_url | relative_url }}">{{ t.nav_guide }}</a>
-        <a href="{{ t.activate_url | relative_url }}">{{ t.nav_activate }}</a>
-        {%- if page.alt_url %}
-        <a class="lang-switch" href="{{ page.alt_url | relative_url }}" title="{{ t.switch_title }}" hreflang="{% if lang == 'id' %}en{% else %}id{% endif %}">{{ t.switch_label }}</a>
-        {%- endif %}
+      <nav class="site-nav" aria-label="Chartwizard">
+        <a href="{{ t.home_url | relative_url }}#download"{% if page.nav == 'download' %} aria-current="page"{% endif %}>{{ t.nav_download }}</a>
+        <a href="{{ t.guide_url | relative_url }}"{% if page.nav == 'guide' %} aria-current="page"{% endif %}>{{ t.nav_guide }}</a>
+        <a href="{{ t.activate_url | relative_url }}"{% if page.nav == 'activate' %} aria-current="page"{% endif %}>{{ t.nav_activate }}</a>
       </nav>
+      {%- if page.alt_url %}
+      <div class="lang-switch">
+        <span>{{ lang | upcase }}</span>
+        <a href="{{ page.alt_url | relative_url }}" title="{{ t.switch_title }}" hreflang="{% if lang == 'id' %}en{% else %}id{% endif %}">{{ t.switch_label }}</a>
+      </div>
+      {%- endif %}
     </div>
   </header>
 
@@ -33,7 +41,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-row">
       <p>{{ t.footer_disclaimer }}</p>
       <p><a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.footer_github }}</a></p>
     </div>
