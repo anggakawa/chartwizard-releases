@@ -24,6 +24,8 @@ id:
   system_label: Sistem
   date_label: Rilis
   verify_link: Periksa SHA-256
+  chart_title: Grafik harian BBCA dengan pola double bottom yang ditemukan Chartwizard, beserta target dan level invalidasinya.
+  tape_label: Contoh hasil scanner
   requirements: Windows 10/11 64-bit
   all_versions: Semua versi
   file_fallback: Chartwizard-Setup-&lt;versi&gt;.exe
@@ -49,6 +51,7 @@ id:
   features_title: Fitur
   features:
     - title: Grafik dan pola
+      tab: Grafik
       shot: chart
       alt: >-
         Grafik harian BBCA di Chartwizard dengan pola double bottom yang ditemukan otomatis, target dan level invalidasinya, volume, RSI dan daftar pola.
@@ -56,6 +59,7 @@ id:
         Candlestick, volume dan RSI, indikator seperti MACD, Bollinger Bands dan Supertrend, alat gambar, serta pola
         yang ditemukan otomatis: pola klasik, support/resistance, pola candlestick dan divergensi RSI.
     - title: Scanner
+      tab: Scanner
       shot: scanner
       alt: >-
         Scanner Chartwizard: setup yang sedang aktif di saham BEI, dengan bias, status, skor, rasio volume dan nilai transaksi.
@@ -63,6 +67,7 @@ id:
         Semua setup yang sedang aktif di seluruh saham BEI dalam satu daftar, dengan filter likuiditas, lonjakan
         volume dan konfirmasi.
     - title: Screener
+      tab: Screener
       shot: screener
       alt: >-
         Screener Chartwizard dengan preset Most Active: harga, perubahan harian, volume, nilai transaksi dan kapitalisasi pasar.
@@ -71,6 +76,7 @@ id:
         Saring saham berdasarkan harga, return, tren, volume dan fundamental, atau pakai preset seperti Top Gainers,
         Unusual Volume dan Low P/E.
     - title: Rotasi sektor
+      tab: Sektor
       shot: sectors
       alt: >-
         Rotasi sektor di Chartwizard: jalur setiap sektor terhadap IHSG, fase dan momentumnya, serta saham terkuat di sektor Financial Services.
@@ -140,6 +146,8 @@ en:
   system_label: System
   date_label: Released
   verify_link: Check the SHA-256
+  chart_title: A daily BBCA chart with the double bottom Chartwizard found, its target and its invalidation level.
+  tape_label: Scanner sample
   requirements: Windows 10/11 64-bit
   all_versions: All versions
   file_fallback: Chartwizard-Setup-&lt;version&gt;.exe
@@ -165,6 +173,7 @@ en:
   features_title: Features
   features:
     - title: Charts and patterns
+      tab: Chart
       shot: chart
       alt: >-
         A daily BBCA chart in Chartwizard with an automatically found double bottom, its target and invalidation level, volume, RSI and the pattern list.
@@ -172,6 +181,7 @@ en:
         Candles, volume and RSI, indicators such as MACD, Bollinger Bands and Supertrend, drawing tools, and patterns
         found automatically: classic patterns, support/resistance, candlestick patterns and RSI divergences.
     - title: Scanner
+      tab: Scanner
       shot: scanner
       alt: >-
         The Chartwizard scanner: live setups across IDX stocks with bias, status, score, volume ratio and traded value.
@@ -179,6 +189,7 @@ en:
         Every live setup across all IDX stocks in one list, with filters for liquidity, volume spikes and
         confirmation.
     - title: Screener
+      tab: Screener
       shot: screener
       alt: >-
         The Chartwizard screener on the Most Active preset: price, daily change, volume, traded value and market cap.
@@ -187,6 +198,7 @@ en:
         Filter stocks by price, returns, trend, volume and fundamentals, or start from presets such as Top Gainers,
         Unusual Volume and Low P/E.
     - title: Sector rotation
+      tab: Sectors
       shot: sectors
       alt: >-
         Sector rotation in Chartwizard: each sector's path against IHSG, its phase and momentum, and the strongest stocks in Financial Services.
