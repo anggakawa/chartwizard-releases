@@ -14,26 +14,62 @@
 {%- endif -%}
 
 <section class="hero" id="download">
-  <div class="wrap hero-inner">
-    <img class="hero-logo" src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="72" height="72">
-    <h1>Chartwizard</h1>
-    <p class="hero-tagline">{{ t.hero_tagline }}</p>
-    <p class="hero-intro">{{ t.hero_intro }}</p>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>{{ t.hero_tagline }}</h1>
+      <p class="hero-intro">{{ t.hero_intro }}</p>
+    </div>
 
-    <a class="btn btn-primary btn-download" href="{{ href }}"{% if r %} download{% endif %}>
-      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-      {{ t.download_button }}
-    </a>
+    <div class="ticket">
+      <div class="ticket-head">
+        <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="28" height="28">
+        <span class="ticket-name">Chartwizard</span>
+        <span class="ticket-os">Windows</span>
+      </div>
+      {%- if r %}
+      <dl class="ticket-rows">
+        <div><dt>{{ t.version_label }}</dt><dd>{{ r.version }}</dd></div>
+        <div><dt>{{ t.size_label }}</dt><dd>{{ r.size_mb }}&nbsp;MB</dd></div>
+        <div><dt>{{ t.system_label }}</dt><dd>{{ t.requirements }}</dd></div>
+        <div><dt>{{ t.date_label }}</dt><dd>{{ r.day }}&nbsp;{{ t.months[month_index] }}&nbsp;{{ r.year }}</dd></div>
+      </dl>
+      {%- endif %}
+      <a class="btn btn-primary btn-download" href="{{ href }}"{% if r %} download{% endif %}>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        {{ t.download_button }}
+      </a>
+      <p class="ticket-links">
+        <a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a>
+        {%- if r and r.sha256 != '' %}
+        <a href="#verify">{{ t.verify_link }}</a>
+        {%- endif %}
+      </p>
+    </div>
+  </div>
 
-    {%- if r %}
-    <p class="release-meta">
-      <span>{{ t.version_label }}&nbsp;{{ r.version }}</span> · <span>{{ r.size_mb }}&nbsp;MB</span> · <span>{{ t.requirements }}</span> · <span>{{ r.day }}&nbsp;{{ t.months[month_index] }}&nbsp;{{ r.year }}</span>
-    </p>
-    {%- endif %}
-    <p class="all-versions"><a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a></p>
-
-    <!-- Screenshot of the app: add images/app.png, then uncomment the next line. -->
-    <!-- <img class="hero-shot" src="{{ '/images/app.png' | relative_url }}" alt="Chartwizard" width="1280" height="800"> -->
+  <div class="wrap tour" id="features">
+    <h2 class="visually-hidden">{{ t.features_title }}</h2>
+    <div class="tour-tabs" role="tablist" aria-label="{{ t.features_title }}">
+      {%- for f in t.features %}
+      <button class="tour-tab" type="button" role="tab" id="tab-{{ f.shot }}" aria-controls="shot-{{ f.shot }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>
+        <span class="tour-title">{{ f.title }}{% if f.pro %} <span class="badge">Pro</span>{% endif %}</span>
+        <span class="tour-body">{{ f.body }}</span>
+      </button>
+      {%- endfor %}
+    </div>
+    <div class="tour-shots">
+      {%- for f in t.features %}
+      <figure class="window" role="tabpanel" id="shot-{{ f.shot }}" aria-labelledby="tab-{{ f.shot }}">
+        <div class="window-bar" aria-hidden="true">
+          <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="14" height="14">
+          <span>Chartwizard</span>
+          <svg class="window-controls" width="96" height="12" viewBox="0 0 96 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 6h10"/><rect x="41.5" y="1.5" width="9" height="9"/><path d="m79 1 10 10M89 1 79 11"/></svg>
+        </div>
+        <img src="{{ '/images/app-' | append: f.shot | append: '.webp' | relative_url }}" alt="{{ f.alt }}" width="1440" height="900"{% unless forloop.first %} loading="lazy"{% endunless %}>
+        <figcaption class="tour-caption" aria-hidden="true"><span class="tour-title">{{ f.title }}{% if f.pro %} <span class="badge">Pro</span>{% endif %}</span> {{ f.body }}</figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
   </div>
 </section>
 
@@ -42,7 +78,7 @@
     <h2>{{ t.install_title }}</h2>
     <ol class="steps">
       {%- for step in t.install_steps %}
-      <li class="step{% if step.note %} callout{% endif %}">
+      <li class="step{% if step.note %} step-warn{% endif %}">
         <h3>{{ step.title }}</h3>
         <p>{{ step.body | replace: '%file%', file }}</p>
         {%- if step.note %}
@@ -56,32 +92,18 @@
   </div>
 </section>
 
-<section class="section section-soft" id="features">
-  <div class="wrap">
-    <h2>{{ t.features_title }}</h2>
-    <div class="feature-grid">
-      {%- for f in t.features %}
-      <div class="card">
-        <h3>{{ f.title }}{% if f.pro %} <span class="badge">Pro</span>{% endif %}</h3>
-        <p>{{ f.body }}</p>
-      </div>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section" id="pro">
+<section class="section section-panel" id="pro">
   <div class="wrap">
     <h2>{{ t.pricing_title }}</h2>
     <div class="table-scroll">
       <table class="pricing">
-        <thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead>
+        <thead><tr><th scope="col"><span class="visually-hidden">{{ t.features_title }}</span></th><th scope="col">Free</th><th scope="col"><span class="badge">Pro</span></th></tr></thead>
         <tbody>
           {%- for row in t.pricing_rows %}
           <tr>
             <th scope="row">{{ row[0] }}</th>
             {%- for cell in row offset: 1 %}
-            <td>{% if cell == 'yes' %}<span class="yes">✓</span> {{ t.yes_word }}{% elsif cell == '' %}<span class="no" aria-hidden="true">–</span>{% else %}{{ cell }}{% endif %}</td>
+            <td>{% if cell == 'yes' %}<svg class="yes" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 8.5 3.2 3L13 4.5"/></svg> {{ t.yes_word }}{% elsif cell == '' %}<span class="no" aria-hidden="true">–</span>{% else %}{{ cell }}{% endif %}</td>
             {%- endfor %}
           </tr>
           {%- endfor %}
@@ -91,12 +113,12 @@
     <div class="buy">
       <a class="btn btn-primary" href="https://lynk.id/codewizard/0j4z82e188gn">{{ t.buy_monthly }}</a>
       <a class="btn btn-secondary" href="https://lynk.id/codewizard/jr2qg5k48m85">{{ t.buy_yearly }}</a>
+      <p class="buy-note">{{ t.seats }} <a href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
     </div>
-    <p class="buy-note">{{ t.seats }} <a href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
   </div>
 </section>
 
-<section class="section section-soft" id="faq">
+<section class="section" id="faq">
   <div class="wrap">
     <h2>{{ t.faq_title }}</h2>
     <div class="faq">
@@ -106,16 +128,55 @@
         <p>{{ item.a }}</p>
       </details>
       {%- endfor %}
-    </div>
 
-    {%- if r and r.sha256 != '' %}
-    <details class="verify" id="verify">
-      <summary>{{ t.verify_title }}</summary>
-      <p>{{ t.verify_hash_label }}</p>
-      <p><code class="hash">{{ r.sha256 }}</code></p>
-      <p>{{ t.verify_command_label }}</p>
-      <pre><code>Get-FileHash .\{{ file }} -Algorithm SHA256</code></pre>
-    </details>
-    {%- endif %}
+      {%- if r and r.sha256 != '' %}
+      <details class="verify" id="verify">
+        <summary>{{ t.verify_title }}</summary>
+        <p>{{ t.verify_hash_label }}</p>
+        <p><code class="hash">{{ r.sha256 }}</code></p>
+        <p>{{ t.verify_command_label }}</p>
+        <pre><code>Get-FileHash .\{{ file }} -Algorithm SHA256</code></pre>
+      </details>
+      {%- endif %}
+    </div>
   </div>
 </section>
+
+<script>
+  // The feature tour: one screenshot at a time, switched by its tab (arrow keys move between tabs).
+  // Without this script every screenshot shows, one after another.
+  (function () {
+    var tabs = [].slice.call(document.querySelectorAll('.tour-tab'));
+    var tour = document.querySelector('.tour');
+    if (!tour || !tabs.length) return;
+    tour.classList.add('tour-ready');
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { select(tab, false); });
+      tab.addEventListener('keydown', function (e) {
+        var step = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (e.key === 'Home') step = -i;
+        if (e.key === 'End') step = tabs.length - 1 - i;
+        if (step === undefined) return;
+        e.preventDefault();
+        select(tabs[(i + step + tabs.length) % tabs.length], true);
+      });
+    });
+    select(tabs[0], false);
+    // A link to #verify opens the check it points at.
+    function openVerify() {
+      var v = document.getElementById('verify');
+      if (v && location.hash === '#verify') v.open = true;
+    }
+    window.addEventListener('hashchange', openVerify);
+    openVerify();
+  })();
+</script>
