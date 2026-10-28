@@ -14,6 +14,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # The deploy script finds this run's github-pages artifact through the API.
+  actions: read
 
 # Deploys queue one at a time. Pull requests get their own group, so a PR push never cancels a pending release deploy.
 concurrency:
@@ -61,10 +63,20 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # A release run starts on the release's tag; take the script from the default branch, as the build does.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'release' && github.event.repository.default_branch || '' }}
+          sparse-checkout: .github/scripts
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      # Not actions/deploy-pages: it deploys under the commit SHA, and Pages hands back the earlier deployment of a SHA it
+      # has seen, so a release with no new commit kept the old site. The script deploys under a version for this run.
       - id: deployment
-        uses: actions/deploy-pages@v5
+        run: node .github/scripts/deploy-pages.mjs
         env:
-          # Pages names a deployment after its build version, which deploy-pages takes from GITHUB_SHA, and hands back the
-          # earlier deployment of the same version. A release published with no commit since the last deploy then kept the old
-          # site (0.4.2 went out still offering 0.4.1), so every run deploys under a version of its own.
-          GITHUB_SHA: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          GITHUB_TOKEN: ${{ github.token }}
+          BUILD_VERSION: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
