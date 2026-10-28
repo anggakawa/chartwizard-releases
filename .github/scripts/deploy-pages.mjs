@@ -1,9 +1,10 @@
 // Deploys this run's github-pages artifact, as actions/deploy-pages does, but under a build version of its own.
 // Pages hands back the earlier deployment of a version it has already seen, and deploy-pages always uses the commit SHA
 // (GITHUB_SHA, which a workflow cannot override). A release published with no commit since the last deploy therefore kept
-// the old site: 0.4.2 went out with the page still offering 0.4.1. BUILD_VERSION adds the run to the SHA.
-// Needs GITHUB_REPOSITORY, GITHUB_RUN_ID, GITHUB_TOKEN (pages: write, actions: read), BUILD_VERSION, and the job's
-// id-token: write permission for the OIDC token.
+// the old site: 0.4.2 went out with the page still offering 0.4.1. The version has to be a commit in the repository, so
+// this makes one for the run: SOURCE_SHA's files, with SOURCE_SHA as its parent, on no branch.
+// Needs GITHUB_REPOSITORY, GITHUB_RUN_ID, SOURCE_SHA (the commit that was built), GITHUB_TOKEN (pages: write,
+// actions: read, contents: write), and the job's id-token: write permission for the OIDC token.
 import { appendFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 
@@ -27,9 +28,9 @@ export function outcome(status) {
 }
 
 async function main() {
-  const { GITHUB_REPOSITORY: repo, GITHUB_RUN_ID: runId, GITHUB_TOKEN: token, BUILD_VERSION: version } = process.env;
+  const { GITHUB_REPOSITORY: repo, GITHUB_RUN_ID: runId, GITHUB_TOKEN: token, SOURCE_SHA: source } = process.env;
   const api = process.env.GITHUB_API_URL || 'https://api.github.com';
-  if (!repo || !runId || !token || !version) throw new Error('GITHUB_REPOSITORY, GITHUB_RUN_ID, GITHUB_TOKEN and BUILD_VERSION must be set.');
+  if (!repo || !runId || !token || !source) throw new Error('GITHUB_REPOSITORY, GITHUB_RUN_ID, GITHUB_TOKEN and SOURCE_SHA must be set.');
   const gh = async (method, path, body) => {
     const res = await fetch(`${api}${path}`, {
       method,
@@ -39,6 +40,11 @@ async function main() {
     if (!res.ok) throw new Error(`GitHub answered ${res.status} to ${method} ${path}: ${await res.text()}`);
     return res.json();
   };
+
+  const { tree } = await gh('GET', `/repos/${repo}/git/commits/${source}`);
+  const { sha: version } = await gh('POST', `/repos/${repo}/git/commits`, {
+    message: `Pages deploy of ${source.slice(0, 7)}, run ${runId}`, tree: tree.sha, parents: [source],
+  });
 
   const artifactId = pickArtifact(await gh('GET', `/repos/${repo}/actions/runs/${runId}/artifacts?name=${ARTIFACT}`));
 

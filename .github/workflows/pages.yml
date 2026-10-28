@@ -14,8 +14,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  # The deploy script finds this run's github-pages artifact through the API.
-  actions: read
 
 # Deploys queue one at a time. Pull requests get their own group, so a PR push never cancels a pending release deploy.
 concurrency:
@@ -59,6 +57,12 @@ jobs:
     needs: build
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    # contents: write lets the deploy script make this run's commit (on no branch); actions: read finds the artifact.
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      actions: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -74,9 +78,8 @@ jobs:
           node-version: 22
 
       # Not actions/deploy-pages: it deploys under the commit SHA, and Pages hands back the earlier deployment of a SHA it
-      # has seen, so a release with no new commit kept the old site. The script deploys under a version for this run.
+      # has seen, so a release with no new commit kept the old site. The script deploys under a commit made for this run.
       - id: deployment
-        run: node .github/scripts/deploy-pages.mjs
+        run: SOURCE_SHA="$(git rev-parse HEAD)" node .github/scripts/deploy-pages.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          BUILD_VERSION: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
