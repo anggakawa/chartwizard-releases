@@ -63,3 +63,8 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+        env:
+          # Pages names a deployment after its build version, which deploy-pages takes from GITHUB_SHA, and hands back the
+          # earlier deployment of the same version. A release published with no commit since the last deploy then kept the old
+          # site (0.4.2 went out still offering 0.4.1), so every run deploys under a version of its own.
+          GITHUB_SHA: ${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
