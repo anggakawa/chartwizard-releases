@@ -55,6 +55,11 @@ Click one to zoom the chart to it.
 
 **Watchlist.** Choose **+** next to **Watchlist** to add the open stock, and click an entry to open it again.
 
+**Themes.** Click the palette button at the top right, or open **Settings → Appearance**, to change the app's colours:
+**Midnight** (the default dark look), **High contrast**, **Daylight** (white), **Washi** (soft Japanese colours),
+**Sakura** (pastels) and **Colorblind** (blue up, orange down). Below the themes, **Candle outline** puts a black
+**Thin** or **Bold** outline around every candle. Both choices apply at once and are remembered.
+
 ## 3. Add indicators
 
 1. Choose **Indicators** in the chart toolbar.
@@ -90,6 +95,8 @@ The drawing tools are on the left edge of the chart:
 - **Magnet** (on by default) snaps each point to the nearest open, high, low or close.
 - Click a drawing to select it, and drag to move it. **Delete** or **Backspace** removes the selected drawing.
 - **Esc** cancels a drawing in progress, then returns to **Cursor**.
+- The selected drawing shows its points' prices on the price axis and their dates on the time axis.
+- **Fib retracement** and **Trend-based fib extension** draw TradingView's levels, with each band shaded.
 - **Hide drawings** hides them without deleting them. **Remove all drawings** deletes every drawing on this stock, after
   asking you to confirm.
 

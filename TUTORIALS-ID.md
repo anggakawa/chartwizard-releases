@@ -59,6 +59,11 @@ Daftar **Patterns** di kanan menampilkan status setiap pola, tanggal berakhirnya
 **Watchlist.** Pilih **+** di sebelah **Watchlist** untuk menambahkan saham yang sedang dibuka, lalu klik entrinya untuk
 membukanya lagi.
 
+**Tema.** Klik tombol palet di kanan atas, atau buka **Settings → Appearance**, untuk mengganti warna aplikasi:
+**Midnight** (tampilan gelap bawaan), **High contrast**, **Daylight** (putih), **Washi** (warna Jepang yang lembut),
+**Sakura** (pastel) dan **Colorblind** (biru naik, oranye turun). Di bawah daftar tema, **Candle outline** memberi garis
+tepi hitam **Thin** atau **Bold** di setiap candle. Keduanya langsung berlaku dan tetap tersimpan.
+
 ## 3. Menambah indikator
 
 1. Pilih **Indicators** di toolbar grafik.
@@ -96,6 +101,8 @@ Alat gambar ada di tepi kiri grafik:
 - Klik gambar untuk memilihnya, lalu seret untuk memindahkannya. **Delete** atau **Backspace** menghapus gambar yang
   dipilih.
 - **Esc** membatalkan gambar yang sedang dibuat, lalu kembali ke **Cursor**.
+- Gambar yang dipilih menampilkan harga titik-titiknya di sumbu harga dan tanggalnya di sumbu waktu.
+- **Fib retracement** dan **Trend-based fib extension** menggambar level seperti TradingView, dengan setiap pita diarsir.
 - **Hide drawings** menyembunyikan gambar tanpa menghapusnya. **Remove all drawings** menghapus semua gambar di saham
   ini, setelah meminta konfirmasi.
 

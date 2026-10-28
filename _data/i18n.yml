@@ -57,7 +57,8 @@ id:
         Grafik harian BBCA di Chartwizard dengan pola double bottom yang ditemukan otomatis, target dan level invalidasinya, volume, RSI dan daftar pola.
       body: >-
         Candlestick, volume dan RSI, indikator seperti MACD, Bollinger Bands dan Supertrend, alat gambar, serta pola
-        yang ditemukan otomatis: pola klasik, support/resistance, pola candlestick dan divergensi RSI.
+        yang ditemukan otomatis: pola klasik, support/resistance, pola candlestick dan divergensi RSI. Pilih dari enam
+        tema warna, dari gelap sampai pastel.
     - title: Scanner
       tab: Scanner
       shot: scanner
@@ -179,7 +180,8 @@ en:
         A daily BBCA chart in Chartwizard with an automatically found double bottom, its target and invalidation level, volume, RSI and the pattern list.
       body: >-
         Candles, volume and RSI, indicators such as MACD, Bollinger Bands and Supertrend, drawing tools, and patterns
-        found automatically: classic patterns, support/resistance, candlestick patterns and RSI divergences.
+        found automatically: classic patterns, support/resistance, candlestick patterns and RSI divergences. Pick from
+        six colour themes, from dark to pastel.
     - title: Scanner
       tab: Scanner
       shot: scanner
