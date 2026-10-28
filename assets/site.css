@@ -270,14 +270,6 @@ pre code { background: none; border: 0; padding: 0; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-actions .btn-secondary { min-height: 52px; }
-.hero-mac-note {
-  margin: 14px 0 0;
-  max-width: 52ch;
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-.hero-mac-note a { white-space: nowrap; }
 
 
 /* The release, set like a quote header: label over value, hairlines between */

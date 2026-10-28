@@ -12,12 +12,10 @@
   {%- assign file = r.url | split: '/' | last -%}
   {%- assign month_index = r.month | minus: 1 -%}
   {%- assign mac_dmg = 'https://github.com/anggakawa/chartwizard-releases/releases/download/' | append: r.tag | append: '/Chartwizard-' | append: r.version | append: '-mac-arm64.dmg' -%}
-  {%- assign mac_zip = 'https://github.com/anggakawa/chartwizard-releases/releases/download/' | append: r.tag | append: '/Chartwizard-' | append: r.version | append: '-mac-arm64.zip' -%}
 {%- else -%}
   {%- assign href = 'https://github.com/anggakawa/chartwizard-releases/releases/latest' -%}
   {%- assign file = t.file_fallback -%}
   {%- assign mac_dmg = 'https://github.com/anggakawa/chartwizard-releases/releases/download/v0.4.3/Chartwizard-0.4.3-mac-arm64.dmg' -%}
-  {%- assign mac_zip = 'https://github.com/anggakawa/chartwizard-releases/releases/download/v0.4.3/Chartwizard-0.4.3-mac-arm64.zip' -%}
 {%- endif -%}
 {%- assign sample_month = sample.date | divided_by: 100 | floor | modulo: 100 | minus: 1 -%}
 {%- capture sample_day -%}{{ sample.date | modulo: 100 }} {{ t.months[sample_month] }} {{ sample.date | divided_by: 10000 | floor }}{%- endcapture -%}
@@ -39,7 +37,6 @@
         </a>
         <a class="btn btn-secondary" href="{{ t.guide_url | relative_url }}">{{ t.nav_guide }}</a>
       </div>
-      <p class="hero-mac-note">{{ t.mac_note }} <a href="{{ mac_zip }}" download>{{ t.download_mac_zip }}</a></p>
 
       {%- if r %}
       <dl class="quote">

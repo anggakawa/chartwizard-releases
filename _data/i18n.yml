@@ -21,8 +21,6 @@ id:
     CSV, dan bar intraday live. Mulai gratis.
   download_button: Unduh untuk Windows
   download_button_mac: Unduh untuk Mac
-  download_mac_zip: ZIP (arm64)
-  mac_note: Apple Silicon (arm64). Belum ditandatangani — Gatekeeper dapat memblokir pembukaan pertama.
   version_label: Versi
   size_label: Ukuran
   system_label: Sistem
@@ -176,8 +174,6 @@ en:
     IHSG, CSV export, and live intraday bars. Free to start.
   download_button: Download for Windows
   download_button_mac: Download for Mac
-  download_mac_zip: ZIP (arm64)
-  mac_note: Apple Silicon (arm64). Not code-signed — Gatekeeper may block the first open.
   version_label: Version
   size_label: Size
   system_label: System
