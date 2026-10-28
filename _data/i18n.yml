@@ -1,7 +1,7 @@
 # Every string the layout and the download page show, in Indonesian (id) and English (en).
 # Strings may hold HTML. %file% is replaced with the installer's file name.
 id:
-  description: Chart, scanner setup, dan screener saham BEI untuk Windows. Unduh gratis.
+  description: Chart, scanner setup, dan screener saham BEI untuk Windows dan macOS (Apple Silicon). Unduh gratis.
   nav_download: Unduh
   nav_guide: Panduan
   nav_activate: Aktivasi Pro
@@ -20,6 +20,9 @@ id:
     lainnya. Scanner menampilkan setup aktif di seluruh BEI. Pro membuka screener, rotasi sektor versus IHSG, ekspor
     CSV, dan bar intraday live. Mulai gratis.
   download_button: Unduh untuk Windows
+  download_button_mac: Unduh untuk Mac
+  download_mac_zip: ZIP (arm64)
+  mac_note: Apple Silicon (arm64). Belum ditandatangani — Gatekeeper dapat memblokir pembukaan pertama.
   version_label: Versi
   size_label: Ukuran
   system_label: Sistem
@@ -27,11 +30,13 @@ id:
   verify_link: Periksa SHA-256
   chart_title: Chart harian BBCA — double bottom yang ditemukan Chartwizard, beserta target dan invalidasi.
   tape_label: Contoh hasil scanner
-  requirements: Windows 10/11 64-bit
+  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
   all_versions: Semua versi
   file_fallback: Chartwizard-Setup-&lt;versi&gt;.exe
 
   install_title: Cara memasang
+  install_windows_heading: Windows
+  install_mac_heading: macOS (Apple Silicon)
   install_steps:
     - title: Jalankan installer
       body: >-
@@ -43,6 +48,23 @@ id:
       note: >-
         Peringatan ini muncul untuk aplikasi yang belum ditandatangani, bukan karena virus. Untuk memastikan file
         asli, cocokkan SHA-256 di bagian bawah halaman ini.
+    - title: Pilih data provider
+      body: >-
+        Buka <b>Settings → Data provider</b>. Yahoo tidak memerlukan token; EODHD memakai API token milik Anda.
+        Sinkronisasi pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market
+        close.
+  install_mac_steps:
+    - title: Pasang dari DMG
+      body: >-
+        Buka file DMG, lalu seret Chartwizard ke folder <b>Applications</b>.
+    - title: Peringatan Gatekeeper?
+      body: >-
+        Build Mac belum ditandatangani atau di-notarize, jadi macOS dapat menolak membuka aplikasi
+        (<b>“Chartwizard” cannot be opened…</b>). Buka <b>System Settings → Privacy &amp; Security</b>, lalu klik
+        <b>Open Anyway</b>.
+      note: >-
+        Peringatan ini untuk aplikasi yang belum ditandatangani Apple, bukan temuan virus. Unduh hanya dari halaman
+        ini atau GitHub Releases.
     - title: Pilih data provider
       body: >-
         Buka <b>Settings → Data provider</b>. Yahoo tidak memerlukan token; EODHD memakai API token milik Anda.
@@ -101,33 +123,40 @@ id:
     - ["Bar intraday live", "", "yes"]
   buy_monthly: Bayar bulanan
   buy_yearly: Bayar tahunan
-  seats: Satu lisensi untuk 2 PC. Pembayaran lewat Lynk.id.
+  seats: Satu lisensi untuk 2 mesin. Pembayaran lewat Lynk.id.
   activate_link: Cara mengaktifkan Pro
 
   faq_title: Pertanyaan umum
   faq:
     - q: Apakah aman? Mengapa Windows memperingatkan?
       a: >-
-        Installer belum ditandatangani secara digital; SmartScreen memperingatkan setiap aplikasi seperti itu. Unduh
-        hanya dari halaman ini atau GitHub Releases, dan cocokkan SHA-256 jika ingin memastikan.
+        Installer Windows belum ditandatangani secara digital; SmartScreen memperingatkan setiap aplikasi seperti itu.
+        Unduh hanya dari halaman ini atau GitHub Releases, dan cocokkan SHA-256 jika ingin memastikan.
+    - q: Mengapa macOS memblokir Chartwizard?
+      a: >-
+        Build Mac belum ditandatangani atau di-notarize Apple. Buka <b>System Settings → Privacy &amp; Security</b>,
+        lalu pilih <b>Open Anyway</b>. Unduh hanya dari halaman ini atau GitHub Releases.
     - q: Bagaimana cara memperbarui?
       a: >-
-        Mulai versi 0.3.0, pembaruan otomatis: versi baru diunduh di latar belakang, lalu klik <b>Restart now</b> di
-        bilah status. Masih memakai 0.1.0 atau 0.2.0? Unduh versi terbaru di atas dan pasang sekali di atas versi lama;
-        setelah itu pembaruan berjalan sendiri.
+        Di Windows, mulai versi 0.3.0 pembaruan otomatis: versi baru diunduh di latar belakang, lalu klik
+        <b>Restart now</b> di bilah status. Masih memakai 0.1.0 atau 0.2.0? Unduh versi terbaru di atas dan pasang
+        sekali di atas versi lama. Di Mac, unduh DMG terbaru dan pasang ulang ke Applications untuk saat ini
+        (auto-update Mac belum dipublikasikan).
     - q: Di mana data disimpan?
       a: >-
-        Di PC Anda, di folder <code>%APPDATA%\idx-chart</code>: harga, pengaturan, lisensi, dan cadangan harian.
+        Di Windows: <code>%APPDATA%\idx-chart</code>. Di macOS:
+        <code>~/Library/Application Support/idx-chart</code>. Isinya harga, pengaturan, lisensi, dan cadangan harian.
         Uninstall tidak menghapus folder ini, jadi memasang ulang melanjutkan dari data yang sama.
-    - q: Windows apa saja yang didukung?
-      a: Windows 10 dan 11, 64-bit. Belum ada versi macOS atau Linux.
+    - q: Sistem apa yang didukung?
+      a: >-
+        Windows 10 dan 11, 64-bit, serta macOS Apple Silicon (arm64). Belum ada build Intel Mac atau Linux.
 
   verify_title: Periksa file unduhan
   verify_hash_label: "SHA-256 installer versi ini:"
   verify_command_label: "Di PowerShell, jalankan perintah ini di folder tempat file tersimpan, lalu cocokkan hasilnya:"
 
 en:
-  description: Charts, setup scanner, and screener for IDX stocks on Windows. Free download.
+  description: Charts, setup scanner, and screener for IDX stocks on Windows and macOS (Apple Silicon). Free download.
   nav_download: Download
   nav_guide: Guide
   nav_activate: Activate Pro
@@ -146,6 +175,9 @@ en:
     divergence, and more. Scanner lists live setups across the board. Pro unlocks screener, sector rotation versus
     IHSG, CSV export, and live intraday bars. Free to start.
   download_button: Download for Windows
+  download_button_mac: Download for Mac
+  download_mac_zip: ZIP (arm64)
+  mac_note: Apple Silicon (arm64). Not code-signed — Gatekeeper may block the first open.
   version_label: Version
   size_label: Size
   system_label: System
@@ -153,11 +185,13 @@ en:
   verify_link: Check the SHA-256
   chart_title: Daily BBCA — double bottom Chartwizard found, with target and invalidation.
   tape_label: Scanner sample
-  requirements: Windows 10/11 64-bit
+  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
   all_versions: All versions
   file_fallback: Chartwizard-Setup-&lt;version&gt;.exe
 
   install_title: How to install
+  install_windows_heading: Windows
+  install_mac_heading: macOS (Apple Silicon)
   install_steps:
     - title: Run the installer
       body: >-
@@ -169,6 +203,21 @@ en:
       note: >-
         That is the unsigned-app warning, not a virus finding. To confirm the file is genuine, match the SHA-256 at the
         bottom of this page.
+    - title: Pick a data provider
+      body: >-
+        Open <b>Settings → Data provider</b>. Yahoo needs no token; EODHD uses your own API token. First sync pulls
+        history; after that it updates daily once the market closes.
+  install_mac_steps:
+    - title: Install from the DMG
+      body: >-
+        Open the DMG, then drag Chartwizard into <b>Applications</b>.
+    - title: Gatekeeper warning?
+      body: >-
+        The Mac build is not code-signed or notarized yet, so macOS may refuse to open it
+        (<b>“Chartwizard” cannot be opened…</b>). Open <b>System Settings → Privacy &amp; Security</b>, then click
+        <b>Open Anyway</b>.
+      note: >-
+        That is the unsigned-app warning, not a virus finding. Download only from this page or GitHub Releases.
     - title: Pick a data provider
       body: >-
         Open <b>Settings → Data provider</b>. Yahoo needs no token; EODHD uses your own API token. First sync pulls
@@ -224,26 +273,33 @@ en:
     - ["Live intraday bars", "", "yes"]
   buy_monthly: Pay monthly
   buy_yearly: Pay yearly
-  seats: One licence covers 2 PCs. Payment through Lynk.id.
+  seats: One licence covers 2 machines. Payment through Lynk.id.
   activate_link: How to activate Pro
 
   faq_title: Common questions
   faq:
     - q: Is it safe? Why does Windows warn me?
       a: >-
-        The installer is not code-signed; SmartScreen warns on every app like that. Download only from this page or
-        GitHub Releases, and match the SHA-256 if you want to double-check.
+        The Windows installer is not code-signed; SmartScreen warns on every app like that. Download only from this page
+        or GitHub Releases, and match the SHA-256 if you want to double-check.
+    - q: Why does macOS block Chartwizard?
+      a: >-
+        The Mac build is not Apple-signed or notarized yet. Open <b>System Settings → Privacy &amp; Security</b>, then
+        choose <b>Open Anyway</b>. Download only from this page or GitHub Releases.
     - q: How do I update?
       a: >-
-        From 0.3.0, Chartwizard updates itself: the new version downloads in the background; click <b>Restart now</b> in
-        the status bar to install. Still on 0.1.0 or 0.2.0? Download the latest above and install once over the old one;
-        updates run themselves after that.
+        On Windows, from 0.3.0 Chartwizard updates itself: the new version downloads in the background; click
+        <b>Restart now</b> in the status bar to install. Still on 0.1.0 or 0.2.0? Download the latest above and install
+        once over the old one. On Mac, download the latest DMG and reinstall into Applications for now (Mac auto-update
+        is not published yet).
     - q: Where is my data kept?
       a: >-
-        On your PC in <code>%APPDATA%\idx-chart</code>: prices, settings, licence, and a daily backup. Uninstalling
-        keeps that folder, so reinstalling picks up where you left off.
-    - q: Which Windows versions?
-      a: Windows 10 and 11, 64-bit. No macOS or Linux version yet.
+        On Windows: <code>%APPDATA%\idx-chart</code>. On macOS:
+        <code>~/Library/Application Support/idx-chart</code>. Prices, settings, licence, and a daily backup live there.
+        Uninstalling keeps that folder, so reinstalling picks up where you left off.
+    - q: Which systems are supported?
+      a: >-
+        Windows 10 and 11, 64-bit, plus macOS Apple Silicon (arm64). No Intel Mac or Linux build yet.
 
   verify_title: Check your download
   verify_hash_label: "The SHA-256 of this version's installer:"

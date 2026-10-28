@@ -11,9 +11,13 @@
   {%- assign href = r.url -%}
   {%- assign file = r.url | split: '/' | last -%}
   {%- assign month_index = r.month | minus: 1 -%}
+  {%- assign mac_dmg = 'https://github.com/anggakawa/chartwizard-releases/releases/download/' | append: r.tag | append: '/Chartwizard-' | append: r.version | append: '-mac-arm64.dmg' -%}
+  {%- assign mac_zip = 'https://github.com/anggakawa/chartwizard-releases/releases/download/' | append: r.tag | append: '/Chartwizard-' | append: r.version | append: '-mac-arm64.zip' -%}
 {%- else -%}
   {%- assign href = 'https://github.com/anggakawa/chartwizard-releases/releases/latest' -%}
   {%- assign file = t.file_fallback -%}
+  {%- assign mac_dmg = 'https://github.com/anggakawa/chartwizard-releases/releases/download/v0.4.3/Chartwizard-0.4.3-mac-arm64.dmg' -%}
+  {%- assign mac_zip = 'https://github.com/anggakawa/chartwizard-releases/releases/download/v0.4.3/Chartwizard-0.4.3-mac-arm64.zip' -%}
 {%- endif -%}
 {%- assign sample_month = sample.date | divided_by: 100 | floor | modulo: 100 | minus: 1 -%}
 {%- capture sample_day -%}{{ sample.date | modulo: 100 }} {{ t.months[sample_month] }} {{ sample.date | divided_by: 10000 | floor }}{%- endcapture -%}
@@ -29,8 +33,13 @@
           <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
           {{ t.download_button }}
         </a>
+        <a class="btn btn-secondary btn-download" href="{{ mac_dmg }}" download>
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          {{ t.download_button_mac }}
+        </a>
         <a class="btn btn-secondary" href="{{ t.guide_url | relative_url }}">{{ t.nav_guide }}</a>
       </div>
+      <p class="hero-mac-note">{{ t.mac_note }} <a href="{{ mac_zip }}" download>{{ t.download_mac_zip }}</a></p>
 
       {%- if r %}
       <dl class="quote">
@@ -120,19 +129,38 @@
 <section class="section" id="install">
   <div class="wrap">
     <div class="section-head"><h2>{{ t.install_title }}</h2></div>
-    <ol class="steps">
-      {%- for step in t.install_steps %}
-      <li class="step{% if step.note %} step-warn{% endif %}">
-        <h3>{{ step.title }}</h3>
-        <p>{{ step.body | replace: '%file%', file }}</p>
-        {%- if step.note %}
-        <p class="step-note">{{ step.note }}</p>
-        <!-- SmartScreen screenshot: add images/smartscreen.png, then uncomment the next line. -->
-        <!-- <img src="{{ '/images/smartscreen.png' | relative_url }}" alt="Windows protected your PC: More info, Run anyway" width="640" height="480"> -->
-        {%- endif %}
-      </li>
-      {%- endfor %}
-    </ol>
+    <div class="install-platforms">
+      <div class="install-platform">
+        <h3 class="install-platform-title">{{ t.install_windows_heading }}</h3>
+        <ol class="steps">
+          {%- for step in t.install_steps %}
+          <li class="step{% if step.note %} step-warn{% endif %}">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body | replace: '%file%', file }}</p>
+            {%- if step.note %}
+            <p class="step-note">{{ step.note }}</p>
+            <!-- SmartScreen screenshot: add images/smartscreen.png, then uncomment the next line. -->
+            <!-- <img src="{{ '/images/smartscreen.png' | relative_url }}" alt="Windows protected your PC: More info, Run anyway" width="640" height="480"> -->
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+      <div class="install-platform">
+        <h3 class="install-platform-title">{{ t.install_mac_heading }}</h3>
+        <ol class="steps">
+          {%- for step in t.install_mac_steps %}
+          <li class="step{% if step.note %} step-warn{% endif %}">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.body }}</p>
+            {%- if step.note %}
+            <p class="step-note">{{ step.note }}</p>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -206,10 +234,16 @@
       <p class="closer-name">Chartwizard</p>
       <p class="closer-meta">{% if r %}{{ t.version_label }} {{ r.version }} · {{ r.size_mb }}&nbsp;MB · {% endif %}{{ t.requirements }}</p>
     </div>
-    <a class="btn btn-primary btn-download" href="{{ href }}"{% if r %} download{% endif %}>
-      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-      {{ t.download_button }}
-    </a>
+    <div class="closer-actions">
+      <a class="btn btn-primary btn-download" href="{{ href }}"{% if r %} download{% endif %}>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        {{ t.download_button }}
+      </a>
+      <a class="btn btn-secondary btn-download" href="{{ mac_dmg }}" download>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        {{ t.download_button_mac }}
+      </a>
+    </div>
   </div>
 </section>
 

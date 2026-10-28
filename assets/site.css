@@ -270,6 +270,15 @@ pre code { background: none; border: 0; padding: 0; }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-actions .btn-secondary { min-height: 52px; }
+.hero-mac-note {
+  margin: 14px 0 0;
+  max-width: 52ch;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.hero-mac-note a { white-space: nowrap; }
+
 
 /* The release, set like a quote header: label over value, hairlines between */
 .quote {
@@ -505,7 +514,14 @@ pre code { background: none; border: 0; padding: 0; }
 }
 .window-controls { margin-left: auto; }
 
-/* Install: three steps on one rail */
+/* Install: Windows and Mac, each with three steps on one rail */
+.install-platforms { display: grid; gap: 56px; }
+.install-platform-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 24px;
+  color: var(--strong);
+}
 .steps {
   list-style: none;
   counter-reset: step;
@@ -648,7 +664,9 @@ details > :last-child { margin-bottom: 20px; }
 .closer-copy p { margin: 0; }
 .closer-name { color: var(--strong); font-size: 1.6rem; font-weight: 700; font-variation-settings: "wdth" 86; line-height: 1.15; }
 .closer-meta { color: var(--muted); font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
-.closer .btn-download { margin-left: auto; }
+.closer-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-left: auto; }
+.closer .btn-download { margin-left: 0; }
+
 
 @media (max-width: 1080px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr); }
@@ -690,7 +708,8 @@ details > :last-child { margin-bottom: 20px; }
   .plan { padding: 22px 18px; }
   .plan-buy .btn, .plan > .btn { flex: 1 1 100%; align-self: stretch; }
   .closer { margin-top: 72px; padding: 40px 0; }
-  .closer .btn-download { margin-left: 0; flex: 1 1 100%; }
+  .closer-actions { margin-left: 0; width: 100%; }
+  .closer-actions .btn { flex: 1 1 100%; }
 }
 
 /* The hero's one moment: the candles print, then the app traces the pattern, marks its levels and lists it */
