@@ -47,9 +47,9 @@
       </dl>
       {%- endif %}
       <p class="hero-links">
-        <a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a>
+        <a class="garis" href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a>
         {%- if r and r.sha256 != '' %}
-        <a href="#verify">{{ t.verify_link }}</a>
+        <a class="garis" href="#verify">{{ t.verify_link }}</a>
         {%- endif %}
       </p>
     </div>
@@ -194,7 +194,7 @@
           <a class="btn btn-primary" href="https://lynk.id/codewizard/0j4z82e188gn">{{ t.buy_monthly }}</a>
           <a class="btn btn-secondary" href="https://lynk.id/codewizard/jr2qg5k48m85">{{ t.buy_yearly }}</a>
         </div>
-        <p class="plan-note">{{ t.seats }} <a href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
+        <p class="plan-note">{{ t.seats }} <a class="garis" href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
       </div>
     </div>
   </div>
