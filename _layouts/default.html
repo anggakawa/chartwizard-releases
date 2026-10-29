@@ -7,16 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} · {% endif %}Chartwizard</title>
   <meta name="description" content="{{ t.description }}">
-  <meta name="theme-color" content="#131722">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
   <link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..700&display=swap">
+  <link rel="preload" href="{{ '/assets/fonts/instrument-sans-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="wrap header-row">
       <a class="brand" href="{{ t.home_url | relative_url }}">
         <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="26" height="26">
@@ -43,8 +42,28 @@
   <footer class="site-footer">
     <div class="wrap footer-row">
       <p>{{ t.footer_disclaimer }}</p>
-      <p><a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.footer_github }}</a></p>
+      <p><a class="garis" href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.footer_github }}</a></p>
     </div>
   </footer>
+
+  <script>
+    // The header gains frosted paper and a hairline once the page scrolls. Without this script it always has them.
+    (function () {
+      var header = document.getElementById('site-header');
+      if (!header) return;
+      var ticking = false;
+      function update() {
+        ticking = false;
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+      }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

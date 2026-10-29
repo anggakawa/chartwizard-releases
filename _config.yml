@@ -13,6 +13,9 @@ exclude:
   - .github
   # The GitHub front page; the download page replaces it on the site.
   - README.md
+  # Notes for whoever changes the site, not pages of it.
+  - DESIGN.md
+  - PRODUCT.md
 
 # Publish the guides as .html only, not also as raw .md files.
 optional_front_matter:

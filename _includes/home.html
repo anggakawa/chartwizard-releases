@@ -23,7 +23,7 @@
 <section class="hero" id="download">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>{{ t.hero_tagline }}</h1>
+      <h1 class="masuk"><span>{{ t.hero_tagline }}</span></h1>
       <p class="hero-intro">{{ t.hero_intro }}</p>
 
       <div class="hero-actions">
@@ -47,9 +47,9 @@
       </dl>
       {%- endif %}
       <p class="hero-links">
-        <a href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a>
+        <a class="garis" href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.all_versions }}</a>
         {%- if r and r.sha256 != '' %}
-        <a href="#verify">{{ t.verify_link }}</a>
+        <a class="garis" href="#verify">{{ t.verify_link }}</a>
         {%- endif %}
       </p>
     </div>
@@ -194,7 +194,7 @@
           <a class="btn btn-primary" href="https://lynk.id/codewizard/0j4z82e188gn">{{ t.buy_monthly }}</a>
           <a class="btn btn-secondary" href="https://lynk.id/codewizard/jr2qg5k48m85">{{ t.buy_yearly }}</a>
         </div>
-        <p class="plan-note">{{ t.seats }} <a href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
+        <p class="plan-note">{{ t.seats }} <a class="garis" href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
       </div>
     </div>
   </div>
@@ -225,6 +225,7 @@
 </section>
 
 <section class="closer">
+  <div class="wrap"><canvas class="grafik" aria-hidden="true"></canvas></div>
   <div class="wrap closer-row">
     <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="56" height="56">
     <div class="closer-copy">
@@ -281,4 +282,25 @@
     window.addEventListener('hashchange', openVerify);
     openVerify();
   })();
+
+  // Each block below the fold arrives once as it scrolls in (site.css: .siap, .tampak).
+  // Anything already on screen at load, and everything under reduced motion, is left alone.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('tampak');
+          watcher.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    var blocks = document.querySelectorAll('.section-head, .tour, .install-platform, .plans, .faq-grid, .closer-row');
+    [].forEach.call(blocks, function (block) {
+      if (block.getBoundingClientRect().top < window.innerHeight * 0.88) return;
+      block.classList.add('siap');
+      watcher.observe(block);
+    });
+  })();
 </script>
+<script src="{{ '/assets/chart.js' | relative_url }}" defer></script>
