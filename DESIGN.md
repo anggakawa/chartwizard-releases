@@ -2,7 +2,7 @@
 name: Chartwizard
 description: Download site for Chartwizard in the Codewizard system. Monochrome paper and ink around the app's own screenshots.
 colors:
-  paper: "#fcfcfb"
+  paper: "#ffffff"
   ink: "#1a1a1a"
   caption: "#4a4a4a"
   dust: "#2a2a2a"
@@ -124,7 +124,7 @@ components:
 
 **Creative North Star: "The Chart in One Ink"**
 
-The download page for Chartwizard, set on the same almost-white paper as codewizard.id. The name of the job sits large on the left: IDX Chart Automatic Setup. Under it, one paragraph in caption gray, then the download. On the right, BBCA's daily chart as the app drew it, with the double bottom it found, printed in soft black: rising candles hollow, falling candles solid. Under the hero, one day's scanner results drift past on a hairline strip.
+The download page for Chartwizard, set on pure white paper: the codewizard.id system, with its paper taken from `#fcfcfb` to `#ffffff`. The name of the job sits large on the left: IDX Chart Automatic Setup. Under it, one paragraph in caption gray, then the download. On the right, BBCA's daily chart as the app drew it, with the double bottom it found, printed in soft black: rising candles hollow, falling candles solid. Under the hero, one day's scanner results drift past on a hairline strip.
 
 Further down, real screenshots of the app sit in plain hairline frames. They are the only colour on the page, and they are the product, not decoration. Then the install steps, Free and Pro side by side, questions, and one more way to the download. The tutorials and the Pro activation guide use the same paper, the same left edge, and the same type.
 
@@ -137,6 +137,7 @@ The palette is paper, ink, and gray. Corners stay square. Instrument Sans does e
 - The hero chart redrawn in one ink; status and bias told by fill, outline and strike-through, not hue
 - The app's screenshots and icon keep their own colours
 - Square corners, hairline rules, one type family
+- codewizard.id's motion: lines rise out of masks, hairlines draw in from the left, rows wash, and a candlestick band closes the page
 - Indonesian at `/`, English at `/en/`; one template for both
 
 ## Colors
@@ -145,11 +146,11 @@ Black, white, and the grays between them. Hue does not carry meaning anywhere in
 
 ### Primary
 
-There is no chromatic primary. Paper (`#fcfcfb`, `--color-paper`) is the field. Ink (`#1a1a1a`, `--color-ink`) is the type, the chart, the download button and the Pro badge.
+There is no chromatic primary. Paper (`#ffffff`, `--color-paper`) is the field: pure white, a step whiter than codewizard.id. Ink (`#1a1a1a`, `--color-ink`) is the type, the chart, the download button and the Pro badge.
 
 ### Neutral
 
-- **Paper** (`#fcfcfb`, `--color-paper`): The whole page, including the hero, the plans, the closer and the guides. Also the text on ink.
+- **Paper** (`#ffffff`, `--color-paper`): The whole page, including the hero, the plans, the closer and the guides. Also the text on ink.
 - **Ink** (`#1a1a1a`, `--color-ink`): Headings, body text, buttons, the candles and the pattern, the Pro badge, the Pro plan's border. Focus rings use `currentColor`.
 - **Caption** (`#4a4a4a`, `--color-secondary`): The hero paragraph, labels in the release row, captions under the screenshots, step bodies, the footer, the invalidation level on the chart.
 - **Dust** (`#2a2a2a`, `--color-dust`): The download button under the pointer.
@@ -232,7 +233,7 @@ None.
 
 ### Navigation
 
-Logo and wordmark, then Download, Guide and Activate Pro. Each nav link is at least 2.75rem tall; hover draws a 1px underline from the left, and the current page keeps it. The language switch on the right is two square cells: the current language in ink with paper text, the other a link that washes on hover. The header is sticky; once the page scrolls it gains `rgb(252 252 251 / 0.82)`, a 14px backdrop blur and a hairline. Without JavaScript it has them from the start.
+Logo and wordmark, then Download, Guide and Activate Pro. Each nav link is at least 2.75rem tall; hover draws a 1px underline from the left, and the current page keeps it. The language switch on the right is two square cells: the current language in ink with paper text, the other a link that washes on hover. The header is sticky; once the page scrolls it gains `rgb(255 255 255 / 0.82)`, a 14px backdrop blur and a hairline. Without JavaScript it has them from the start.
 
 ### Hero chart card
 
@@ -240,7 +241,11 @@ Logo and wordmark, then Download, Guide and Activate Pro. Each nav link is at le
 
 On load the candles print from the left, the pattern traces, its points pop, the levels fade in, then the pattern card rises. All of it is CSS, and all of it is off for reduced motion.
 
-The animated candlestick band from codewizard.id (`chart.js`) is not used here. It is abstract on purpose, and this card is real data that its legend, pattern card and alt text describe; swapping it would leave those describing a chart that is not there.
+This card stays real data: its legend, pattern card and alt text describe it, so the abstract band below does not replace it.
+
+### Chart band
+
+`assets/chart.js`, ported from codewizard.id, draws a canvas (`.grafik`) across the top of the closer, on the same left edge as everything else. When the closer scrolls in, dust gathers into candlesticks, then a seven-candle moving average draws out from the left. Rising candles are hollow and falling candles solid, so one ink is enough. The tape then slides left and new candles enter on the right. Every few seconds a scan line sweeps across; where a candle is the low or high of the five on each side, it leaves corner brackets around five candles and a small square at the turn, then fades. A mouse anywhere over the closer draws a dashed crosshair that snaps to a candle. The data is a seeded random walk: no prices, no axis labels, nothing that reads as a capture of the app. It pauses off-screen and when the tab is hidden; reduced motion draws one still, assembled frame. Without JavaScript the canvas is hidden.
 
 ### Scanner strip
 
@@ -260,7 +265,7 @@ Free and Pro side by side, one column on a phone. Free has a hairline border; Pr
 
 ### Questions
 
-The heading holds the left column on a wide screen. Each question is a `<details>` row between hairlines, with a square-cornered chevron that turns when open. The SHA-256 check is the last row, with the hash and the PowerShell command in the code face. A link to `#verify` opens it.
+The heading holds the left column on a wide screen. Each question is a `<details>` row between hairlines, with a square-cornered chevron that turns when open. The row wash grows from the left under the pointer. The SHA-256 check is the last row, with the hash and the PowerShell command in the code face. A link to `#verify` opens it.
 
 ### Guides
 
@@ -268,7 +273,14 @@ The heading holds the left column on a wide screen. Each question is a `<details
 
 ### Motion
 
-The header fades in. The hero chart prints and traces once. The scanner strip drifts. Links share one underline wipe. Tour panels fade in when switched. Question rows wash under the pointer. `prefers-reduced-motion` turns all of it off, stops the strip (it becomes a scrollable row) and shows everything in place.
+One entrance, one reveal, and the band, as on codewizard.id.
+
+- **Entrance.** On load the header fades in and the hero line rises out of its own mask (`.masuk`). The paragraph, the buttons, the release row and the links follow, each fading up from 0.75rem over about 0.7s. The chart card rises with them while its candles print, the pattern traces, its points pop, the levels fade in and the pattern card arrives. The scanner strip fades in last, then drifts.
+- **Reveal.** Further down, each block arrives once as it scrolls in: section heads, the tour, each install platform, the plans, the questions and the closer. The hairline over a head draws in from the left; then the words follow, and the steps, plan rows and questions come in one after another, about 60ms apart. A block already on screen at load is left alone. The reveal is driven by a small script (`.siap`, then `.tampak`), so nothing is hidden when it does not run.
+- **Hover.** Links share one underline that leaves to the right and returns from the left (`.garis`). Nav links draw their underline from the left. A question row washes in from the left under the pointer and recedes to the right. Tour panels fade in when switched.
+- **Band.** See Chart band.
+
+`prefers-reduced-motion` turns all of it off: no entrance, no reveal, no wipe, the band as one still frame, and the scanner strip stopped as a scrollable row.
 
 ## Do's and Don'ts
 

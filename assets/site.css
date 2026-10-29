@@ -11,7 +11,7 @@
 }
 
 :root {
-  --color-paper: #fcfcfb;
+  --color-paper: #ffffff;
   --color-ink: #1a1a1a;
   --color-secondary: #4a4a4a;
   --color-rule: #e6e6e4;
@@ -226,7 +226,7 @@ pre code {
 
 .site-header.scrolled,
 html:not(.js) .site-header {
-  background-color: rgb(252 252 251 / 0.82);
+  background-color: rgb(255 255 255 / 0.82);
   border-bottom-color: var(--color-rule);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
@@ -628,7 +628,7 @@ main:has(> .closer) + .site-footer {
   left: var(--space-4);
   width: 232px;
   padding: var(--space-3);
-  background: rgb(252 252 251 / 0.94);
+  background: rgb(255 255 255 / 0.94);
   border: 1px solid var(--color-ink);
   border-radius: var(--radius-none);
   font-size: var(--font-size-label);
@@ -774,7 +774,26 @@ main:has(> .closer) + .site-footer {
   gap: var(--space-4) var(--space-7);
   margin-bottom: var(--space-8);
   padding-top: var(--space-6);
-  border-top: 1px solid var(--color-rule);
+}
+
+/* The hairline over a section head, drawn as its own line so the reveal can draw it in from the left. */
+.section-head,
+.faq-grid > h2,
+.faq {
+  position: relative;
+}
+
+.section-head::before,
+.faq-grid > h2::before,
+.faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-rule);
+  transform-origin: left center;
 }
 
 .section h2 {
@@ -1056,11 +1075,6 @@ main:has(> .closer) + .site-footer {
 
 .faq-grid > h2 {
   padding-top: var(--space-6);
-  border-top: 1px solid var(--color-rule);
-}
-
-.faq {
-  border-top: 1px solid var(--color-rule);
 }
 
 details {
@@ -1068,6 +1082,8 @@ details {
 }
 
 details > summary {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1077,11 +1093,23 @@ details > summary {
   letter-spacing: var(--letter-spacing-lead);
   cursor: pointer;
   list-style: none;
-  transition: background-color var(--duration-state) var(--ease-arrive);
 }
 
-details > summary:hover {
+/* Row wash: grows from the left under the pointer, recedes to the right. */
+details > summary::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 calc(var(--space-3) * -1);
   background: var(--color-hover);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform var(--duration-wash) var(--ease-arrive);
+}
+
+details > summary:hover::before {
+  transform: scaleX(1);
+  transform-origin: left center;
 }
 
 details > summary::-webkit-details-marker {
@@ -1125,6 +1153,19 @@ details > :last-child {
   margin-top: var(--space-section);
   padding: var(--space-9) 0;
   border-top: 1px solid var(--color-rule);
+}
+
+/* The closer's moving picture (assets/chart.js): candles in one ink, across the top of the row. */
+.grafik {
+  display: block;
+  width: 100%;
+  height: clamp(10rem, 18vw, 16rem);
+  margin-bottom: var(--space-6);
+  pointer-events: none;
+}
+
+html:not(.js) .grafik {
+  display: none;
 }
 
 .closer-row {
@@ -1206,7 +1247,82 @@ details > :last-child {
   .pattern-card { animation: hc-card 0.5s var(--ease-arrive) 2.6s both; }
   .site-header { animation: hc-fade 900ms var(--ease-arrive) 250ms both; }
   .tour-ready .tour-panel:not([hidden]) .window { animation: shot-in 0.3s var(--ease-arrive); }
+
+  /* The hero's entrance: the line rises out of its own mask, then the rest follows. */
+  .masuk > span { animation: naik var(--duration-entrance) var(--ease-arrive) 120ms both; }
+  .hero-intro { animation: muncul var(--duration-reveal) var(--ease-arrive) 380ms both; }
+  .hero-actions { animation: muncul var(--duration-reveal) var(--ease-arrive) 500ms both; }
+  .quote { animation: muncul var(--duration-reveal) var(--ease-arrive) 620ms both; }
+  .hero-links { animation: muncul var(--duration-reveal) var(--ease-arrive) 720ms both; }
+  .chart-card { animation: muncul var(--duration-entrance) var(--ease-arrive) 200ms both; }
+  .tape { animation: hc-fade 900ms linear 900ms both; }
+
+  /* Further down, each block arrives once as it scrolls in: its hairline draws from the left, then the words
+     follow. The script marks a block .siap only when it starts below the fold, so nothing is hidden without it. */
+  .js .siap > *,
+  .js .siap .step,
+  .js .siap .plan-list li,
+  .js .siap details {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition:
+      opacity var(--duration-reveal) var(--ease-arrive),
+      transform var(--duration-reveal) var(--ease-arrive);
+  }
+
+  .js .siap.tampak > *,
+  .js .siap.tampak .step,
+  .js .siap.tampak .plan-list li,
+  .js .siap.tampak details {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .siap > :nth-child(2) { transition-delay: 100ms; }
+  .js .siap > :nth-child(3) { transition-delay: 200ms; }
+  .js .siap .step:nth-child(2),
+  .js .siap .plan-list li:nth-child(2),
+  .js .siap details:nth-child(2) { transition-delay: 220ms; }
+  .js .siap .step:nth-child(3),
+  .js .siap .plan-list li:nth-child(3),
+  .js .siap details:nth-child(3) { transition-delay: 280ms; }
+  .js .siap .plan-list li:nth-child(4),
+  .js .siap details:nth-child(4) { transition-delay: 340ms; }
+  .js .siap .plan-list li:nth-child(5),
+  .js .siap details:nth-child(5) { transition-delay: 400ms; }
+  .js .siap .plan-list li:nth-child(n + 6),
+  .js .siap details:nth-child(n + 6) { transition-delay: 460ms; }
+  .js .siap .step:nth-child(1),
+  .js .siap .plan-list li:nth-child(1),
+  .js .siap details:nth-child(1) { transition-delay: 160ms; }
+
+  .js .siap.section-head::before,
+  .js .siap.faq-grid > h2::before,
+  .js .siap.faq-grid > .faq::before {
+    transform: scaleX(0);
+    transition: transform 1200ms var(--ease-arrive);
+  }
+
+  .js .siap.tampak.section-head::before,
+  .js .siap.tampak.faq-grid > h2::before,
+  .js .siap.tampak.faq-grid > .faq::before {
+    transform: scaleX(1);
+  }
 }
+
+/* A line that rises out of its own mask. */
+.masuk {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.masuk > span {
+  display: block;
+}
+
+@keyframes naik { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes muncul { from { opacity: 0; transform: translateY(0.75rem); } to { opacity: 1; transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

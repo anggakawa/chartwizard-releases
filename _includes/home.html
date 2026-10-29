@@ -23,7 +23,7 @@
 <section class="hero" id="download">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>{{ t.hero_tagline }}</h1>
+      <h1 class="masuk"><span>{{ t.hero_tagline }}</span></h1>
       <p class="hero-intro">{{ t.hero_intro }}</p>
 
       <div class="hero-actions">
@@ -225,6 +225,7 @@
 </section>
 
 <section class="closer">
+  <div class="wrap"><canvas class="grafik" aria-hidden="true"></canvas></div>
   <div class="wrap closer-row">
     <img src="{{ '/assets/logo.svg' | relative_url }}" alt="" width="56" height="56">
     <div class="closer-copy">
@@ -281,4 +282,25 @@
     window.addEventListener('hashchange', openVerify);
     openVerify();
   })();
+
+  // Each block below the fold arrives once as it scrolls in (site.css: .siap, .tampak).
+  // Anything already on screen at load, and everything under reduced motion, is left alone.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('tampak');
+          watcher.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px' });
+    var blocks = document.querySelectorAll('.section-head, .tour, .install-platform, .plans, .faq-grid, .closer-row');
+    [].forEach.call(blocks, function (block) {
+      if (block.getBoundingClientRect().top < window.innerHeight * 0.88) return;
+      block.classList.add('siap');
+      watcher.observe(block);
+    });
+  })();
 </script>
+<script src="{{ '/assets/chart.js' | relative_url }}" defer></script>
