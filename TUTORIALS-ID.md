@@ -20,8 +20,12 @@ dibiarkan dalam bahasa Inggris, sama seperti di aplikasi. [English version](TUTO
 Chartwizard menyimpan data pasar di PC kamu, jadi perlu satu kali sinkronisasi sebelum grafiknya terisi.
 
 1. Buka **Settings → Data provider**.
-2. Pilih penyedia data:
-   - **Yahoo Finance** tidak perlu token. Memilihnya langsung memulai sinkronisasi.
+2. Pilih penyedia data, lalu setujui pemberitahuan sumber datanya. Pemberitahuan ini muncul sekali per penyedia; sebelum
+   kamu setuju, Chartwizard tidak mengunduh apa pun darinya. Data diambil dari penyedia itu ke PC kamu, di bawah
+   perjanjianmu sendiri dengan penyedia tersebut. Chartwizard tidak menjual data dan tidak berafiliasi dengan Yahoo
+   maupun EODHD.
+   - **Yahoo Finance** tidak perlu token, tetapi **eksperimental, gratis, dan bisa putus**: sumber tidak resmi yang
+     bisa berubah atau berhenti kapan saja. Memilihnya langsung memulai sinkronisasi.
    - **EODHD** memakai API token milikmu sendiri. Tempel token di **EODHD API token** lalu pilih **Save**; menyimpan
      token langsung memulai sinkronisasi. Token disimpan terenkripsi di PC kamu.
 3. Tunggu sinkronisasi pertama selesai. Bilah status di bagian bawah menampilkan progres dan hasilnya.

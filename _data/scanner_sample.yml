@@ -1,20 +1,21 @@
-# A snapshot of the scanner, for the strip under the hero. Taken from the app's own scanner on the date below.
-date: 20261027
-chart: {"code":"BBCA","name":"Bank Central Asia Tbk","o":"4,940","h":"4,980","l":"4,800","c":"4,900","up":false,"change":"−40","pct":"−0.81%","pattern_date":"2026-10-20","score":"0.59","target":"8,960","invalidation":"4,740"}
+# A snapshot of the scanner, for the strip under the hero, and the hero chart's legend. Every ticker, company and price here is
+# fictitious: an invented market the app scanned, not real market data.
+date: 20261029
+chart: {"code":"ARNB","name":"Bank Arunika Nusantara Tbk","o":"3,370","h":"3,400","l":"3,340","c":"3,380","up":true,"change":"+20","pct":"+0.60%","pattern_date":"2026-10-20","score":"0.42","status":"confirmed","target":"4,710","invalidation":"3,190"}
 setups:
-  - { code: MMIX, pattern: "Double bottom", bias: bullish, status: confirmed }
-  - { code: ASLI, pattern: "Head and shoulders", bias: bearish, status: forming }
-  - { code: TOBA, pattern: "Rectangle", bias: neutral, status: forming }
-  - { code: ITMG, pattern: "Double top", bias: bearish, status: forming }
-  - { code: SMLE, pattern: "Cup and handle", bias: bullish, status: confirmed }
-  - { code: INKP, pattern: "Bear pennant", bias: bearish, status: breakout }
-  - { code: INTP, pattern: "Rectangle", bias: neutral, status: forming }
-  - { code: JARR, pattern: "Bear flag", bias: bearish, status: breakout }
-  - { code: CMNT, pattern: "Double bottom", bias: bullish, status: forming }
-  - { code: BDMN, pattern: "Double top", bias: bearish, status: forming }
-  - { code: JECX, pattern: "Double bottom", bias: bullish, status: forming }
-  - { code: MBSS, pattern: "Double top", bias: bearish, status: forming }
-  - { code: ANDI, pattern: "Rectangle", bias: neutral, status: forming }
-  - { code: GGRM, pattern: "Head and shoulders", bias: bearish, status: forming }
-  - { code: SMRA, pattern: "Regular bullish RSI", bias: bullish, status: breakout }
-  - { code: PGEO, pattern: "Double top", bias: bearish, status: forming }
+  - { code: ARSI, pattern: "Regular bearish RSI", bias: bearish, status: breakout }
+  - { code: NABL, pattern: "Regular bearish RSI", bias: bearish, status: forming }
+  - { code: CIMD, pattern: "Regular bullish RSI", bias: bullish, status: forming }
+  - { code: INPK, pattern: "Hidden bearish RSI", bias: bearish, status: breakout }
+  - { code: WIFM, pattern: "Cup and handle", bias: bullish, status: breakout }
+  - { code: CEPS, pattern: "Double bottom", bias: bullish, status: forming }
+  - { code: RAOI, pattern: "Regular bearish RSI", bias: bearish, status: breakout }
+  - { code: ANTK, pattern: "Regular bullish RSI", bias: bullish, status: confirmed }
+  - { code: DABR, pattern: "Double top", bias: bearish, status: forming }
+  - { code: JAWJ, pattern: "Ascending triangle", bias: bullish, status: forming }
+  - { code: GASS, pattern: "Ascending triangle", bias: bullish, status: forming }
+  - { code: BAAM, pattern: "Double bottom", bias: bullish, status: forming }
+  - { code: KAPA, pattern: "Double bottom", bias: bullish, status: forming }
+  - { code: GANM, pattern: "Regular bullish RSI", bias: bullish, status: forming }
+  - { code: SETI, pattern: "Head and shoulders", bias: bearish, status: forming }
+  - { code: NITM, pattern: "Regular bearish RSI", bias: bearish, status: forming }

@@ -12,8 +12,13 @@ This repository holds the installers only; it has no source code.
 ## Install
 
 1. Run the installer. It is not code-signed yet, so Windows SmartScreen may warn about it: choose **More info → Run anyway**.
-2. Open **Settings → Data provider** and pick a provider. Yahoo Finance needs no token; EODHD needs your own API token.
-   The first sync then downloads the price history.
+2. Open **Settings → Data provider**, pick a provider and agree to its data-source notice. EODHD needs your own API
+   token. Yahoo Finance needs no token, but it is experimental, free and may break at any time. The first sync then
+   downloads the price history.
+
+**About the data.** Chartwizard downloads prices from the provider you choose straight to your PC, under your own
+agreement with that provider. Chartwizard does not sell data and is not affiliated with Yahoo or EODHD. Yahoo Finance is
+an unofficial source that may stop working at any time without notice.
 
 Needs Windows 10 or 11, 64-bit. Each release lists the installer's SHA-256 so you can check your download:
 
@@ -30,7 +35,8 @@ Get-FileHash .\Chartwizard-Setup-<version>.exe -Algorithm SHA256
 | Scanner | The top 5 setups | Every setup and filter |
 | Screener and Sectors | | Yes |
 | CSV export | | Yes |
-| Live intraday bars | | Yes |
+
+The Pro price pays for Chartwizard's analysis features, not for data: every plan downloads from the provider you choose.
 
 Buy Pro on Lynk.id: [monthly](https://lynk.id/codewizard/0j4z82e188gn) or [yearly](https://lynk.id/codewizard/jr2qg5k48m85).
 One licence covers 2 PCs.
@@ -63,5 +69,10 @@ di bilah status untuk memasangnya. Pengaturannya ada di **Settings → Updates**
 Untuk Pro: beli di Lynk.id ([bulanan](https://lynk.id/codewizard/0j4z82e188gn) atau
 [tahunan](https://lynk.id/codewizard/jr2qg5k48m85)), lalu buka **Settings → Licence** dan masukkan email pembayaran
 serta order ID dari struk Lynk.id. Satu lisensi untuk 2 PC. Panduan lengkap dengan gambar: [cara mengaktifkan Pro](ACTIVATE-PRO.md).
+Harga Pro membayar fitur analisa Chartwizard, bukan data.
+
+Tentang data: Chartwizard mengunduh harga dari provider pilihan Anda langsung ke PC Anda, di bawah perjanjian Anda
+sendiri dengan provider itu. Chartwizard tidak menjual data dan tidak berafiliasi dengan Yahoo maupun EODHD. Yahoo
+Finance adalah sumber tidak resmi: eksperimental, gratis, dan bisa berhenti kapan saja.
 
 Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi. / Chartwizard is charting software, not investment advice.

@@ -29,7 +29,7 @@ Success means the download starts on the first click, the warning screens do not
 
 ## Positioning
 
-A product page and a manual for one desktop app, not a studio site and not a trading service. It shows what the app really does (real screenshots, a real chart, one real day of scanner results) and says plainly that Chartwizard is charting software, not investment advice. It sits under codewizard.id and shares its visual system, but speaks only for Chartwizard.
+A product page and a manual for one desktop app, not a studio site and not a trading service. It shows what the app really does (screenshots of the real app, the chart and one day of scanner results it produced) on an invented market, so no real ticker, company or price appears, and says plainly that Chartwizard is charting software, not investment advice, that the data comes from the user's own provider, and that Pro pays for the analysis, not for data. It sits under codewizard.id and shares its visual system, but speaks only for Chartwizard.
 
 ## Operating Context
 
@@ -41,7 +41,8 @@ Visitors arrive on a phone as often as on a PC, often to read the guide or find 
 - The guides stay plain Markdown so they read on GitHub too. `_config.yml` gives each its layout, language and other-language link. `ACTIVATE-PRO.md` holds both languages on one page (Indonesian first, then `#english`).
 - Download links, release data, Lynk.id product links and the activation steps are content owned outside the design. A design change must not edit them.
 - The site does not print Pro prices; they are on the Lynk.id product pages.
-- Screenshots in `images/` are captures of the real app. Do not fabricate, retouch or recolour them.
+- Screenshots in `images/` are captures of the real app running on a fictitious market (invented tickers, companies and prices). Do not retouch or recolour them, and never replace them with captures that show real market data: market data belongs to its providers and is not ours to publish. The same goes for social media: use illustrations, or data from a source that allows publishing it.
+- Never promise Yahoo Finance data in Pro promotion. Yahoo is labelled experimental, free and may break; the Pro price pays for the analysis features, not for data.
 - `DESIGN.md`, `PRODUCT.md` and `README.md` are excluded from the build.
 
 ## Brand Commitments
@@ -67,16 +68,16 @@ Motion: `--ease-arrive`, `--ease-leave`, `--ease-swap`, `--duration-*`. codewiza
 
 ## Evidence on Hand
 
-- Real app screenshots: `images/app-chart.webp`, `app-scanner.webp`, `app-screener.webp`, `app-sectors.webp` (1440×900).
+- App screenshots on the fictitious market: `images/app-chart.webp`, `app-scanner.webp`, `app-screener.webp`, `app-sectors.webp` (1440×900). The chart shows ARNB (Bank Arunika Nusantara Tbk), an invented ticker; no code on them is a real IDX code.
 - Real guide pictures: `images/lynk-receipt.png`, `images/settings-licence.png`.
-- A real chart snapshot (`_includes/hero-chart.svg`) and one day's scanner results (`_data/scanner_sample.yml`), both generated from the app's data.
+- A chart snapshot (`_includes/hero-chart.svg`) and one day's scanner results (`_data/scanner_sample.yml`), both generated from what the app found on the same fictitious market. The page says so under the screenshots and in the strip's label.
 - Release facts come from GitHub Releases at build time.
 - Absence: no user counts, reviews or testimonials. Do not add any.
 
 ## Product Principles
 
 - The download is the first and the last thing on the page.
-- Show the real app; never a mock-up.
+- Show the real app, never a mock-up, and never on real market data.
 - Say plainly why Windows and macOS warn, and how to check the file.
 - Every string in both languages, from one place.
 - The guides work on GitHub and on the site.

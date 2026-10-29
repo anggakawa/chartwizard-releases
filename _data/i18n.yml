@@ -17,8 +17,8 @@ id:
   hero_tagline: IDX Chart Automatic Setup.
   hero_intro: >-
     Setup chart saham BEI terdeteksi otomatis — pola klasik, support/resistance, candlestick, divergensi RSI, dan
-    lainnya. Scanner menampilkan setup aktif di seluruh BEI. Pro membuka screener, rotasi sektor versus IHSG, ekspor
-    CSV, dan bar intraday live. Mulai gratis.
+    lainnya. Scanner menampilkan setup aktif di seluruh BEI. Pro membuka screener, rotasi sektor versus IHSG, dan ekspor
+    CSV. Mulai gratis.
   download_button: Unduh untuk Windows
   download_button_mac: Unduh untuk Mac
   version_label: Versi
@@ -26,8 +26,13 @@ id:
   system_label: Sistem
   date_label: Rilis
   verify_link: Periksa SHA-256
-  chart_title: Chart harian BBCA — double bottom yang ditemukan Chartwizard, beserta target dan invalidasi.
-  tape_label: Contoh hasil scanner
+  chart_title: >-
+    Chart harian ARNB, ticker fiktif dengan data karangan — double bottom yang ditemukan Chartwizard, beserta target dan
+    invalidasi.
+  tape_label: Contoh hasil scanner (data fiktif)
+  sample_note: >-
+    Chart, hasil scanner, dan screenshot di halaman ini memakai ticker, nama perusahaan, dan harga fiktif untuk ilustrasi,
+    bukan data pasar sungguhan.
   requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
   all_versions: Semua versi
   file_fallback: Chartwizard-Setup-&lt;versi&gt;.exe
@@ -48,9 +53,9 @@ id:
         asli, cocokkan SHA-256 di bagian bawah halaman ini.
     - title: Pilih data provider
       body: >-
-        Buka <b>Settings → Data provider</b>. Yahoo tidak memerlukan token; EODHD memakai API token milik Anda.
-        Sinkronisasi pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market
-        close.
+        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token milik Anda.
+        Yahoo tidak memerlukan token, tetapi <b>eksperimental, gratis, dan bisa putus</b> kapan saja. Sinkronisasi
+        pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market close.
   install_mac_steps:
     - title: Pasang dari DMG
       body: >-
@@ -65,9 +70,9 @@ id:
         ini atau GitHub Releases.
     - title: Pilih data provider
       body: >-
-        Buka <b>Settings → Data provider</b>. Yahoo tidak memerlukan token; EODHD memakai API token milik Anda.
-        Sinkronisasi pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market
-        close.
+        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token milik Anda.
+        Yahoo tidak memerlukan token, tetapi <b>eksperimental, gratis, dan bisa putus</b> kapan saja. Sinkronisasi
+        pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market close.
 
   features_title: Fitur utama
   features:
@@ -75,8 +80,8 @@ id:
       tab: Chart
       shot: chart
       alt: >-
-        Chart harian BBCA di Chartwizard dengan pola double bottom yang ditemukan otomatis, target dan level
-        invalidasinya, volume, RSI dan daftar pola.
+        Chart harian ticker fiktif ARNB di Chartwizard dengan pola double bottom yang ditemukan otomatis, target dan
+        level invalidasinya, volume, RSI dan daftar pola.
       body: >-
         Candle, volume, RSI. Indikator MACD, Bollinger, Supertrend. Drawing tools. Pola otomatis: klasik,
         support/resistance, candlestick, divergensi RSI. Enam tema warna — dari gelap hingga pastel.
@@ -84,8 +89,8 @@ id:
       tab: Scanner
       shot: scanner
       alt: >-
-        Scanner Chartwizard: setup yang sedang aktif di saham BEI, dengan bias, status, skor, rasio volume dan nilai
-        transaksi.
+        Scanner Chartwizard pada ticker fiktif: setup yang sedang aktif, dengan bias, status, skor, rasio volume dan
+        nilai transaksi.
       body: >-
         Semua setup aktif di BEI dalam satu daftar. Filter likuiditas, lonjakan volume, dan konfirmasi — tanpa harus
         membuka chart satu per satu.
@@ -93,8 +98,8 @@ id:
       tab: Screener
       shot: screener
       alt: >-
-        Screener Chartwizard dengan preset Most Active: harga, perubahan harian, volume, nilai transaksi dan
-        kapitalisasi pasar.
+        Screener Chartwizard dengan preset Most Active pada ticker fiktif: harga, perubahan harian, volume, nilai
+        transaksi dan kapitalisasi pasar.
       pro: true
       body: >-
         Filter berdasarkan harga, return, tren, volume, dan fundamental. Atau pakai preset: Top Gainers, Unusual
@@ -103,8 +108,8 @@ id:
       tab: Sektor
       shot: sectors
       alt: >-
-        Rotasi sektor di Chartwizard: jalur setiap sektor terhadap IHSG, fase dan momentumnya, serta saham terkuat di
-        sektor Financial Services.
+        Rotasi sektor di Chartwizard pada pasar fiktif: jalur setiap sektor terhadap indeks, fase dan momentumnya,
+        serta saham terkuat di sektor Financial Services.
       pro: true
       body: >-
         Sektor yang menguat atau melemah versus IHSG, plus saham terkuat di tiap sektor. Memerlukan EODHD (Yahoo tidak
@@ -118,9 +123,11 @@ id:
     - ["Scanner", "5 setup teratas", "Semua setup dan filter"]
     - ["Screener dan Sektor", "", "yes"]
     - ["Ekspor CSV", "", "yes"]
-    - ["Bar intraday live", "", "yes"]
   buy_monthly: Bayar bulanan
   buy_yearly: Bayar tahunan
+  pro_pays_for: >-
+    Harga Pro membayar fitur analisa Chartwizard, bukan data. Semua paket mengunduh data dari provider yang Anda pilih,
+    di bawah perjanjian Anda sendiri dengan provider itu.
   seats: Satu lisensi untuk 2 mesin. Pembayaran lewat Lynk.id.
   activate_link: Cara mengaktifkan Pro
 
@@ -140,6 +147,13 @@ id:
         <b>Restart now</b> di bilah status. Masih memakai 0.1.0 atau 0.2.0? Unduh versi terbaru di atas dan pasang
         sekali di atas versi lama. Di Mac, unduh DMG terbaru dan pasang ulang ke Applications untuk saat ini
         (auto-update Mac belum dipublikasikan).
+    - q: Dari mana data harganya?
+      a: >-
+        Dari provider yang Anda pilih sendiri, langsung ke komputer Anda, di bawah perjanjian Anda dengan provider itu:
+        EODHD dengan API token milik Anda, atau Yahoo Finance. Chartwizard tidak menjual data dan tidak berafiliasi
+        dengan Yahoo maupun EODHD. Yahoo adalah sumber tidak resmi: eksperimental, gratis, dan bisa berhenti kapan saja
+        tanpa pemberitahuan. Aplikasi meminta persetujuan Anda atas pemberitahuan ini sebelum mengunduh dari setiap
+        provider.
     - q: Di mana data disimpan?
       a: >-
         Di Windows: <code>%APPDATA%\idx-chart</code>. Di macOS:
@@ -171,7 +185,7 @@ en:
   hero_intro: >-
     Automatic chart setups for Indonesia Stock Exchange names — classic patterns, support/resistance, candlesticks, RSI
     divergence, and more. Scanner lists live setups across the board. Pro unlocks screener, sector rotation versus
-    IHSG, CSV export, and live intraday bars. Free to start.
+    IHSG, and CSV export. Free to start.
   download_button: Download for Windows
   download_button_mac: Download for Mac
   version_label: Version
@@ -179,8 +193,11 @@ en:
   system_label: System
   date_label: Released
   verify_link: Check the SHA-256
-  chart_title: Daily BBCA — double bottom Chartwizard found, with target and invalidation.
-  tape_label: Scanner sample
+  chart_title: Daily ARNB, a fictitious ticker on invented data — double bottom Chartwizard found, with target and invalidation.
+  tape_label: Scanner sample (fictitious data)
+  sample_note: >-
+    The chart, scanner results and screenshots on this page use fictitious tickers, company names and prices for
+    illustration, not real market data.
   requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
   all_versions: All versions
   file_fallback: Chartwizard-Setup-&lt;version&gt;.exe
@@ -201,8 +218,9 @@ en:
         bottom of this page.
     - title: Pick a data provider
       body: >-
-        Open <b>Settings → Data provider</b>. Yahoo needs no token; EODHD uses your own API token. First sync pulls
-        history; after that it updates daily once the market closes.
+        Open <b>Settings → Data provider</b> and agree to the data-source notice. EODHD uses your own API token. Yahoo
+        needs no token, but it is <b>experimental, free and may break</b> at any time. First sync pulls history; after
+        that it updates daily once the market closes.
   install_mac_steps:
     - title: Install from the DMG
       body: >-
@@ -216,8 +234,9 @@ en:
         That is the unsigned-app warning, not a virus finding. Download only from this page or GitHub Releases.
     - title: Pick a data provider
       body: >-
-        Open <b>Settings → Data provider</b>. Yahoo needs no token; EODHD uses your own API token. First sync pulls
-        history; after that it updates daily once the market closes.
+        Open <b>Settings → Data provider</b> and agree to the data-source notice. EODHD uses your own API token. Yahoo
+        needs no token, but it is <b>experimental, free and may break</b> at any time. First sync pulls history; after
+        that it updates daily once the market closes.
 
   features_title: What you use day to day
   features:
@@ -225,8 +244,8 @@ en:
       tab: Chart
       shot: chart
       alt: >-
-        A daily BBCA chart in Chartwizard with an automatically found double bottom, its target and invalidation level,
-        volume, RSI and the pattern list.
+        A daily chart of the fictitious ticker ARNB in Chartwizard with an automatically found double bottom, its target
+        and invalidation level, volume, RSI and the pattern list.
       body: >-
         Candles, volume, RSI. MACD, Bollinger, Supertrend. Drawing tools. Auto patterns: classic, support/resistance,
         candlestick, RSI divergence. Six themes — dark to pastel.
@@ -234,7 +253,8 @@ en:
       tab: Scanner
       shot: scanner
       alt: >-
-        The Chartwizard scanner: live setups across IDX stocks with bias, status, score, volume ratio and traded value.
+        The Chartwizard scanner on fictitious tickers: live setups with bias, status, score, volume ratio and traded
+        value.
       body: >-
         Every live setup on IDX in one list. Filter liquidity, volume spikes, and confirmation — so you are not flipping
         charts one by one.
@@ -242,7 +262,8 @@ en:
       tab: Screener
       shot: screener
       alt: >-
-        The Chartwizard screener on the Most Active preset: price, daily change, volume, traded value and market cap.
+        The Chartwizard screener on the Most Active preset, on fictitious tickers: price, daily change, volume, traded
+        value and market cap.
       pro: true
       body: >-
         Filter by price, returns, trend, volume, and fundamentals — or jump to presets: Top Gainers, Unusual Volume, Low
@@ -251,8 +272,8 @@ en:
       tab: Sectors
       shot: sectors
       alt: >-
-        Sector rotation in Chartwizard: each sector's path against IHSG, its phase and momentum, and the strongest
-        stocks in Financial Services.
+        Sector rotation in Chartwizard on a fictitious market: each sector's path against the index, its phase and
+        momentum, and the strongest stocks in Financial Services.
       pro: true
       body: >-
         Which sectors are strong or soft versus IHSG, plus the strongest names in each. Needs EODHD (Yahoo has no sector
@@ -266,9 +287,11 @@ en:
     - ["Scanner", "The top 5 setups", "Every setup and filter"]
     - ["Screener and Sectors", "", "yes"]
     - ["CSV export", "", "yes"]
-    - ["Live intraday bars", "", "yes"]
   buy_monthly: Pay monthly
   buy_yearly: Pay yearly
+  pro_pays_for: >-
+    The Pro price pays for Chartwizard's analysis features, not for data. Every plan downloads from the data provider
+    you choose, under your own agreement with it.
   seats: One licence covers 2 machines. Payment through Lynk.id.
   activate_link: How to activate Pro
 
@@ -288,6 +311,12 @@ en:
         <b>Restart now</b> in the status bar to install. Still on 0.1.0 or 0.2.0? Download the latest above and install
         once over the old one. On Mac, download the latest DMG and reinstall into Applications for now (Mac auto-update
         is not published yet).
+    - q: Where do the prices come from?
+      a: >-
+        From the provider you choose, straight to your PC, under your own agreement with that provider: EODHD with your
+        own API token, or Yahoo Finance. Chartwizard does not sell data and is not affiliated with Yahoo or EODHD. Yahoo
+        is an unofficial source: experimental, free, and it may stop working at any time without notice. The app asks
+        you to agree to this notice before it downloads from each provider.
     - q: Where is my data kept?
       a: >-
         On Windows: <code>%APPDATA%\idx-chart</code>. On macOS:

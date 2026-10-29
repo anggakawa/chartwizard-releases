@@ -858,6 +858,13 @@ main:has(> .closer) + .site-footer {
   gap: var(--space-10);
 }
 
+/* Under the screenshots: they show an invented market */
+.sample-note {
+  margin-top: var(--space-6);
+  color: var(--color-secondary);
+  font-size: var(--font-size-label);
+}
+
 .tour-panel {
   display: grid;
   grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);

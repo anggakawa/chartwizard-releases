@@ -1,7 +1,8 @@
 {%- comment -%}
   The download page, shared by index.html (Indonesian) and en/index.html (English).
   Text comes from _data/i18n.yml; the release comes from _data/release.json, written by the Pages workflow.
-  The hero chart and the scanner strip come from _data/scanner_sample.yml and _includes/hero-chart.svg, a snapshot of the app's data.
+  The hero chart and the scanner strip come from _data/scanner_sample.yml and _includes/hero-chart.svg, and the screenshots from
+  images/: all of them show the app on an invented market (fictitious tickers, companies and prices), never real market data.
 {%- endcomment -%}
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign r = site.data.release -%}
@@ -65,7 +66,7 @@
       </figcaption>
       {% include hero-chart.svg months=t.months title=t.chart_title %}
       <div class="pattern-card" aria-hidden="true">
-        <div class="pattern-row"><b>Double bottom</b><span class="status status-forming">Forming</span></div>
+        <div class="pattern-row"><b>Double bottom</b><span class="status status-{{ c.status }}">{{ c.status | capitalize }}</span></div>
         <div class="pattern-row muted"><span>{{ c.pattern_date }}</span><span class="score"><i style="--s: {{ c.score }}"></i>{{ c.score }}</span></div>
         <div class="pattern-row muted"><span>Target <b>{{ c.target }}</b></span><span>Invalid. <b>{{ c.invalidation }}</b></span></div>
       </div>
@@ -120,6 +121,7 @@
       </figure>
       {%- endfor %}
     </div>
+    <p class="sample-note">{{ t.sample_note }}</p>
   </div>
 </section>
 
@@ -194,6 +196,7 @@
           <a class="btn btn-primary" href="https://lynk.id/codewizard/0j4z82e188gn">{{ t.buy_monthly }}</a>
           <a class="btn btn-secondary" href="https://lynk.id/codewizard/jr2qg5k48m85">{{ t.buy_yearly }}</a>
         </div>
+        <p class="plan-note">{{ t.pro_pays_for }}</p>
         <p class="plan-note">{{ t.seats }} <a class="garis" href="{{ t.activate_url | relative_url }}">{{ t.activate_link }}</a></p>
       </div>
     </div>

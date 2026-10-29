@@ -124,9 +124,9 @@ components:
 
 **Creative North Star: "The Chart in One Ink"**
 
-The download page for Chartwizard, set on pure white paper: the codewizard.id system, with its paper taken from `#fcfcfb` to `#ffffff`. The name of the job sits large on the left: IDX Chart Automatic Setup. Under it, one paragraph in caption gray, then the download. On the right, BBCA's daily chart as the app drew it, with the double bottom it found, printed in soft black: rising candles hollow, falling candles solid. Under the hero, one day's scanner results drift past on a hairline strip.
+The download page for Chartwizard, set on pure white paper: the codewizard.id system, with its paper taken from `#fcfcfb` to `#ffffff`. The name of the job sits large on the left: IDX Chart Automatic Setup. Under it, one paragraph in caption gray, then the download. On the right, a daily chart as the app drew it, with the double bottom it found, of ARNB, a fictitious ticker on an invented market, printed in soft black: rising candles hollow, falling candles solid. Under the hero, one day's scanner results drift past on a hairline strip.
 
-Further down, real screenshots of the app sit in plain hairline frames. They are the only colour on the page, and they are the product, not decoration. Then the install steps, Free and Pro side by side, questions, and one more way to the download. The tutorials and the Pro activation guide use the same paper, the same left edge, and the same type.
+Further down, screenshots of the real app, on the same invented market, sit in plain hairline frames, with one caption-gray line under them saying the data is fictitious. They are the only colour on the page, and they are the product, not decoration. Then the install steps, Free and Pro side by side, questions, and one more way to the download. The tutorials and the Pro activation guide use the same paper, the same left edge, and the same type.
 
 The palette is paper, ink, and gray. Corners stay square. Instrument Sans does every job except literal text you type or compare.
 
@@ -237,11 +237,11 @@ Logo and wordmark, then Download, Guide and Activate Pro. Each nav link is at le
 
 ### Hero chart card
 
-`_includes/hero-chart.svg`: BBCA, daily, with the double bottom Chartwizard found, generated from the app's data. The card is paper in a hairline frame. The legend shows the symbol, name, OHLC and change in ink and caption gray. The pattern line is 2.4px ink; its three points are paper circles with an ink ring; the neckline is a dashed ink line; invalidation is a dotted caption-gray line; the last price is an ink tag with paper figures. Volume is faint. The pattern card overlaps the chart's lower edge on a wide screen, outlined in ink, and sits under the chart on a phone.
+`_includes/hero-chart.svg`: ARNB (fictitious), daily, with the double bottom Chartwizard found, generated from the invented market the screenshots show. The card is paper in a hairline frame. The legend shows the symbol, name, OHLC and change in ink and caption gray. The pattern line is 2.4px ink; its three points are paper circles with an ink ring; the neckline is a dashed ink line; invalidation is a dotted caption-gray line; the last price is an ink tag with paper figures. Volume is faint. The pattern card overlaps the chart's lower edge on a wide screen, outlined in ink, and sits under the chart on a phone.
 
 On load the candles print from the left, the pattern traces, its points pop, the levels fade in, then the pattern card rises. All of it is CSS, and all of it is off for reduced motion.
 
-This card stays real data: its legend, pattern card and alt text describe it, so the abstract band below does not replace it.
+This card stays a real capture of what the app found, on fictitious data: its legend, pattern card and alt text describe it, so the abstract band below does not replace it. Never swap in a real ticker's chart.
 
 ### Chart band
 
@@ -249,11 +249,11 @@ This card stays real data: its legend, pattern card and alt text describe it, so
 
 ### Scanner strip
 
-One day's real setups from `_data/scanner_sample.yml`, between two hairlines, scrolling left in 70s and pausing under the pointer. Each item: code in ink, a bias square (hollow bullish, solid bearish), the pattern name in caption gray, and a status pill.
+One day's setups on the fictitious market from `_data/scanner_sample.yml` (the label says "fictitious data"), between two hairlines, scrolling left in 70s and pausing under the pointer. Each item: code in ink, a bias square (hollow bullish, solid bearish), the pattern name in caption gray, and a status pill.
 
 ### Feature tour
 
-Four tabs (Chart, Scanner, Screener, Sectors), each showing a real screenshot at 1440×900 in a hairline window frame with a thin title bar. Tabs are text; the selected one is ink, semibold and underlined. Arrow keys, Home and End move between them. Without JavaScript the tabs hide and all four screenshots show one after another. Pro features carry the ink Pro badge.
+Four tabs (Chart, Scanner, Screener, Sectors), each showing a screenshot of the real app on the fictitious market at 1440×900 in a hairline window frame with a thin title bar, and one `.sample-note` line under the four saying so. Tabs are text; the selected one is ink, semibold and underlined. Arrow keys, Home and End move between them. Without JavaScript the tabs hide and all four screenshots show one after another. Pro features carry the ink Pro badge.
 
 ### Install steps
 

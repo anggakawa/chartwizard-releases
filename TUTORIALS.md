@@ -19,8 +19,11 @@ Short walkthroughs for each part of the app. Labels in **bold** are what you see
 Chartwizard keeps the market data on your PC, so it needs one sync before the charts fill.
 
 1. Open **Settings → Data provider**.
-2. Pick a provider:
-   - **Yahoo Finance** needs no token. Choosing it starts a sync.
+2. Pick a provider, then agree to its data-source notice. It shows once for each provider, and Chartwizard downloads
+   nothing from a provider until you agree. The data comes from that provider to your PC, under your own agreement with
+   it. Chartwizard does not sell data and is not affiliated with Yahoo or EODHD.
+   - **Yahoo Finance** needs no token, but it is **experimental, free and may break**: an unofficial source that can
+     change or stop at any time. Choosing it starts a sync.
    - **EODHD** needs your own API token. Paste it into **EODHD API token** and choose **Save**; saving starts a sync.
      The token is stored encrypted on your PC.
 3. Wait for the first sync to finish. The bottom status bar shows its progress and result.
