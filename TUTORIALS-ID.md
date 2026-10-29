@@ -1,8 +1,5 @@
 # Panduan Chartwizard
 
-Panduan singkat untuk setiap bagian aplikasi. Label yang **tebal** adalah tulisan yang kamu lihat di layar; label itu
-dibiarkan dalam bahasa Inggris, sama seperti di aplikasi. [English version](TUTORIALS.md).
-
 - [1. Mulai pertama: ambil data](#1-mulai-pertama-ambil-data)
 - [2. Membaca grafik](#2-membaca-grafik)
 - [3. Menambah indikator](#3-menambah-indikator)
