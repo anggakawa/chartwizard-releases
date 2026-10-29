@@ -1,6 +1,8 @@
 # The download site, built by .github/workflows/pages.yml.
 title: Chartwizard
-baseurl: /chartwizard-releases
+# Served at the root of the custom domain chart.codewizard.id, so there is no base path.
+url: https://chart.codewizard.id
+baseurl: ""
 
 markdown: kramdown
 kramdown:

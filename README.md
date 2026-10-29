@@ -2,7 +2,7 @@
 
 Charting and pattern scanning for stocks on the Indonesia Stock Exchange (IDX), for Windows.
 
-**[Download the latest version](https://anggakawa.github.io/chartwizard-releases/en/)**: open the page and click
+**[Download the latest version](https://chart.codewizard.id/en/)**: open the page and click
 **Download for Windows**.
 
 New to the app? Read the [tutorials](TUTORIALS.md).
@@ -53,7 +53,7 @@ Your data and licence stay in `%APPDATA%\idx-chart`, and uninstalling keeps that
 
 ## Bahasa Indonesia
 
-**[Unduh versi terbaru](https://anggakawa.github.io/chartwizard-releases/)**: buka halamannya, klik **Unduh untuk
+**[Unduh versi terbaru](https://chart.codewizard.id/)**: buka halamannya, klik **Unduh untuk
 Windows**, lalu jalankan `Chartwizard-Setup-<versi>.exe`. Jika Windows SmartScreen memperingatkan, pilih
 **More info → Run anyway**. Panduan lengkap dalam bahasa Indonesia: [panduan Chartwizard](TUTORIALS-ID.md).
 
