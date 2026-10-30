@@ -161,7 +161,7 @@ There is no chromatic primary. Paper (`#ffffff`, `--color-paper`) is the field: 
 
 ### Named Rules
 
-**The Monochrome Rule.** Do not introduce a hue in the interface. Gray is the only secondary tone. A link is underlined, not recoloured. The rule covers the UI around the content: the app's screenshots (`images/app-*.webp`), the pictures in the guides (`images/lynk-receipt.png`, `images/settings-licence.png`) and the app icon (`assets/logo.svg`) are the product as it really looks, and are shown as they are. Do not tint, desaturate or recolour them.
+**The Monochrome Rule.** Do not introduce a hue in the interface. Gray is the only secondary tone. A link is underlined, not recoloured. The rule covers the UI around the content: the app's screenshots (`images/app-*.webp`), the pictures in the guides (`images/lynk-receipt.png`, `images/settings-licence.png`) and the app icon (`assets/logo.svg`) are the product as it really looks, and are shown as they are. Do not tint, desaturate or recolour them. The browser tab and link previews carry the studio's mark instead: `favicon.ico`, `assets/favicon.svg`, `assets/favicon-32.png` and `apple-touch-icon.png` are the Codewizard icon in ink on paper, and `assets/og.png` (1200×630, built from `_brand/og.html`) sets “Chartwizard”, the tagline and “by Codewizard Studio” beside the Codewizard emblem (`assets/codewizard.svg`). The app icon stays in the header.
 
 Where the app uses colour to mean something, the page uses fill instead:
 
@@ -228,7 +228,7 @@ None.
 
 - **Download** (`.btn-primary`): The one filled shape. Ink with paper text, square, at least 3.25rem tall in the hero and the closer, with a download arrow. Hover goes to dust; pressed fades to opacity 0.65. The Windows button points at the newest installer from `_data/release.json`; never edit that link by hand.
 - **Secondary** (`.btn-secondary`): Ink outline on paper: Download for Mac, the guide, the Free plan's download, the yearly Pro link. Hover washes.
-- **Text link** (`.garis`): Ink with a 1px underline that leaves to the right and returns from the left on hover. Used for “All versions”, “Check the SHA-256”, the activation link under Pro and the footer link. Links inside the guides are plain underlines.
+- **Text link** (`.garis`): Ink with a 1px underline that leaves to the right and returns from the left on hover. Used for “All versions”, “Check the SHA-256”, the activation link under Pro and the footer links. The footer's studio credit, “Made by Codewizard Studio”, links to codewizard.id with the Codewizard icon (`assets/codewizard-icon.svg`) at 16px beside it; the underline sits under the words only. Links inside the guides are plain underlines.
 - **Focus:** 2px `currentColor` outline, 3px offset.
 
 ### Navigation

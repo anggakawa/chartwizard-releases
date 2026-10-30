@@ -12,6 +12,8 @@ id:
   activate_url: ACTIVATE-PRO.html
   footer_disclaimer: Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi.
   footer_github: Rilis di GitHub
+  footer_maker: Dibuat oleh Codewizard Studio
+  og_image_alt: "Chartwizard oleh Codewizard Studio: nama aplikasi di samping lambang lingkaran bergaris gelombang Codewizard."
   months: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agu, Sep, Okt, Nov, Des]
 
   hero_tagline: IDX Chart Automatic Setup.
@@ -179,6 +181,8 @@ en:
   activate_url: "ACTIVATE-PRO.html#english"
   footer_disclaimer: Chartwizard is charting software, not investment advice.
   footer_github: Releases on GitHub
+  footer_maker: Made by Codewizard Studio
+  og_image_alt: "Chartwizard by Codewizard Studio: the app name beside the Codewizard wave-line circle emblem."
   months: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
 
   hero_tagline: IDX Chart Automatic Setup.
