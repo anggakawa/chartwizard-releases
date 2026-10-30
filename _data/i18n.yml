@@ -1,7 +1,9 @@
 # Every string the layout and the download page show, in Indonesian (id) and English (en).
 # Strings may hold HTML. %file% is replaced with the installer's file name.
 id:
-  description: Chart, scanner setup, dan screener saham BEI untuk Windows dan macOS (Apple Silicon). Unduh gratis.
+  description: >-
+    Chart dan scanner setup saham BEI untuk Windows, plus macOS Apple Silicon (Beta). Unduh gratis. Versi gratis
+    menampilkan 5 setup teratas; semua setup, filter, dan screener ada di Pro.
   nav_download: Unduh
   nav_guide: Panduan
   nav_activate: Aktivasi Pro
@@ -10,54 +12,54 @@ id:
   home_url: /
   guide_url: TUTORIALS-ID.html
   activate_url: ACTIVATE-PRO.html
-  footer_disclaimer: Chartwizard adalah perangkat lunak grafik, bukan nasihat investasi.
+  footer_disclaimer: Chartwizard adalah software charting, bukan nasihat investasi.
   footer_github: Rilis di GitHub
-  footer_maker: Dibuat oleh Codewizard Studio
-  og_image_alt: "Chartwizard oleh Codewizard Studio: nama aplikasi di samping lambang lingkaran bergaris gelombang Codewizard."
+  footer_maker: Dibuat oleh Codewizard
+  og_image_alt: "Chartwizard oleh Codewizard: nama aplikasi di samping lambang lingkaran bergaris gelombang Codewizard."
   months: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agu, Sep, Okt, Nov, Des]
 
-  hero_tagline: IDX Chart Automatic Setup.
+  hero_tagline: Setup chart BEI, terdeteksi otomatis.
   hero_intro: >-
-    Setup chart saham BEI terdeteksi otomatis — pola klasik, support/resistance, candlestick, divergensi RSI, dan
-    lainnya. Scanner menampilkan setup aktif di seluruh BEI. Pro membuka screener, rotasi sektor versus IHSG, dan ekspor
-    CSV. Mulai gratis.
+    Chartwizard mendeteksi setup di chart saham BEI secara otomatis: pola klasik, support/resistance, candlestick,
+    divergensi RSI, dan lainnya. Scanner menampilkan setup yang aktif di seluruh BEI: 5 teratas di versi gratis, semua
+    setup dan filternya di Pro. Screener, rotasi sektor terhadap IHSG, dan ekspor CSV juga ada di Pro. Mulai gratis.
   download_button: Unduh untuk Windows
-  download_button_mac: Unduh untuk Mac
+  download_button_mac: Unduh untuk Mac (Beta)
   version_label: Versi
   size_label: Ukuran
   system_label: Sistem
   date_label: Rilis
   verify_link: Periksa SHA-256
   chart_title: >-
-    Chart harian ARNB, ticker fiktif dengan data karangan — double bottom yang ditemukan Chartwizard, beserta target dan
-    invalidasi.
+    Chart harian ARNB (ticker fiktif, data karangan) dengan double bottom yang ditemukan Chartwizard, plus target dan
+    invalidasinya.
   tape_label: Contoh hasil scanner (data fiktif)
   sample_note: >-
     Chart, hasil scanner, dan screenshot di halaman ini memakai ticker, nama perusahaan, dan harga fiktif untuk ilustrasi,
     bukan data pasar sungguhan.
-  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
+  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64), Beta
   all_versions: Semua versi
   file_fallback: Chartwizard-Setup-&lt;versi&gt;.exe
 
   install_title: Cara memasang
   install_windows_heading: Windows
-  install_mac_heading: macOS (Apple Silicon)
+  install_mac_heading: macOS Apple Silicon (Beta)
   install_steps:
     - title: Jalankan installer
       body: >-
         Buka <code>%file%</code> dari folder Downloads, lalu ikuti langkah pemasangan sampai selesai.
     - title: Peringatan SmartScreen?
       body: >-
-        Installer belum memiliki tanda tangan digital, jadi Windows dapat menampilkan layar biru
+        Installer-nya belum ditandatangani secara digital, jadi Windows bisa menampilkan layar biru
         <b>Windows protected your PC</b>. Klik <b>More info</b>, lalu <b>Run anyway</b>.
       note: >-
-        Peringatan ini muncul untuk aplikasi yang belum ditandatangani, bukan karena virus. Untuk memastikan file
-        asli, cocokkan SHA-256 di bagian bawah halaman ini.
+        Peringatan ini muncul karena aplikasinya belum ditandatangani, bukan karena ada virus. Untuk memastikan
+        file-nya asli, cocokkan SHA-256 di bagian bawah halaman ini.
     - title: Pilih data provider
       body: >-
-        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token milik Anda.
-        Yahoo tidak memerlukan token, tetapi <b>eksperimental, gratis, dan bisa putus</b> kapan saja. Sinkronisasi
-        pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market close.
+        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token Anda
+        sendiri. Yahoo tidak perlu token, tetapi sifatnya <b>eksperimental, gratis, dan bisa putus</b> kapan saja.
+        Sinkronisasi pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis tiap hari begitu market close.
   install_mac_steps:
     - title: Pasang dari DMG
       body: >-
@@ -72,9 +74,9 @@ id:
         ini atau GitHub Releases.
     - title: Pilih data provider
       body: >-
-        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token milik Anda.
-        Yahoo tidak memerlukan token, tetapi <b>eksperimental, gratis, dan bisa putus</b> kapan saja. Sinkronisasi
-        pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis setiap hari setelah market close.
+        Buka <b>Settings → Data provider</b> dan setujui pemberitahuan sumber data. EODHD memakai API token Anda
+        sendiri. Yahoo tidak perlu token, tetapi sifatnya <b>eksperimental, gratis, dan bisa putus</b> kapan saja.
+        Sinkronisasi pertama mengunduh riwayat harga; setelah itu data diperbarui otomatis tiap hari begitu market close.
 
   features_title: Fitur utama
   features:
@@ -86,7 +88,7 @@ id:
         level invalidasinya, volume, RSI dan daftar pola.
       body: >-
         Candle, volume, RSI. Indikator MACD, Bollinger, Supertrend. Drawing tools. Pola otomatis: klasik,
-        support/resistance, candlestick, divergensi RSI. Enam tema warna — dari gelap hingga pastel.
+        support/resistance, candlestick, divergensi RSI. Enam tema warna, dari gelap sampai pastel.
     - title: Scanner
       tab: Scanner
       shot: scanner
@@ -94,8 +96,8 @@ id:
         Scanner Chartwizard pada ticker fiktif: setup yang sedang aktif, dengan bias, status, skor, rasio volume dan
         nilai transaksi.
       body: >-
-        Semua setup aktif di BEI dalam satu daftar. Filter likuiditas, lonjakan volume, dan konfirmasi — tanpa harus
-        membuka chart satu per satu.
+        Setup yang aktif di seluruh BEI dalam satu daftar. Versi gratis menampilkan 5 setup teratas. Di Pro, semua setup
+        tampil dengan filter likuiditas, lonjakan volume, dan konfirmasi. Tidak perlu membuka chart satu per satu.
     - title: Screener
       tab: Screener
       shot: screener
@@ -128,17 +130,17 @@ id:
   buy_monthly: Bayar bulanan
   buy_yearly: Bayar tahunan
   pro_pays_for: >-
-    Harga Pro membayar fitur analisa Chartwizard, bukan data. Semua paket mengunduh data dari provider yang Anda pilih,
-    di bawah perjanjian Anda sendiri dengan provider itu.
-  seats: Satu lisensi untuk 2 mesin. Pembayaran lewat Lynk.id.
+    Yang Anda bayar di Pro adalah fitur analisis Chartwizard, bukan data. Di semua paket, data diunduh dari provider
+    pilihan Anda, berdasarkan perjanjian Anda sendiri dengan provider itu.
+  seats: Satu lisensi untuk 2 komputer. Pembayaran lewat Lynk.id.
   activate_link: Cara mengaktifkan Pro
 
   faq_title: Pertanyaan umum
   faq:
-    - q: Apakah aman? Mengapa Windows memperingatkan?
+    - q: Apakah aman? Kenapa Windows memberi peringatan?
       a: >-
-        Installer Windows belum ditandatangani secara digital; SmartScreen memperingatkan setiap aplikasi seperti itu.
-        Unduh hanya dari halaman ini atau GitHub Releases, dan cocokkan SHA-256 jika ingin memastikan.
+        Installer Windows belum ditandatangani secara digital, dan SmartScreen memang memperingatkan setiap aplikasi
+        seperti itu. Unduh hanya dari halaman ini atau GitHub Releases, dan cocokkan SHA-256 kalau ingin memastikan.
     - q: Mengapa macOS memblokir Chartwizard?
       a: >-
         Build Mac belum ditandatangani atau di-notarize Apple. Buka <b>System Settings → Privacy &amp; Security</b>,
@@ -151,11 +153,11 @@ id:
         (auto-update Mac belum dipublikasikan).
     - q: Dari mana data harganya?
       a: >-
-        Dari provider yang Anda pilih sendiri, langsung ke komputer Anda, di bawah perjanjian Anda dengan provider itu:
-        EODHD dengan API token milik Anda, atau Yahoo Finance. Chartwizard tidak menjual data dan tidak berafiliasi
-        dengan Yahoo maupun EODHD. Yahoo adalah sumber tidak resmi: eksperimental, gratis, dan bisa berhenti kapan saja
-        tanpa pemberitahuan. Aplikasi meminta persetujuan Anda atas pemberitahuan ini sebelum mengunduh dari setiap
-        provider.
+        Dari provider yang Anda pilih sendiri, langsung ke komputer Anda, berdasarkan perjanjian Anda dengan provider
+        itu: EODHD dengan API token Anda sendiri, atau Yahoo Finance. Chartwizard tidak menjual data dan tidak
+        berafiliasi dengan Yahoo maupun EODHD. Yahoo adalah sumber tidak resmi: eksperimental, gratis, dan bisa berhenti
+        kapan saja tanpa pemberitahuan. Sebelum mengunduh dari provider mana pun, aplikasi akan meminta Anda menyetujui
+        pemberitahuan ini.
     - q: Di mana data disimpan?
       a: >-
         Di Windows: <code>%APPDATA%\idx-chart</code>. Di macOS:
@@ -163,14 +165,17 @@ id:
         Uninstall tidak menghapus folder ini, jadi memasang ulang melanjutkan dari data yang sama.
     - q: Sistem apa yang didukung?
       a: >-
-        Windows 10 dan 11, 64-bit, serta macOS Apple Silicon (arm64). Belum ada build Intel Mac atau Linux.
+        Windows 10 dan 11, 64-bit, serta macOS Apple Silicon (arm64) dalam versi Beta. Belum ada build Intel Mac atau
+        Linux.
 
   verify_title: Periksa file unduhan
   verify_hash_label: "SHA-256 installer versi ini:"
   verify_command_label: "Di PowerShell, jalankan perintah ini di folder tempat file tersimpan, lalu cocokkan hasilnya:"
 
 en:
-  description: Charts, setup scanner, and screener for IDX stocks on Windows and macOS (Apple Silicon). Free download.
+  description: >-
+    Charts and a setup scanner for IDX stocks on Windows, plus macOS Apple Silicon (Beta). Free download. The free plan
+    shows the top 5 setups; every setup, the filters, and the screener are in Pro.
   nav_download: Download
   nav_guide: Guide
   nav_activate: Activate Pro
@@ -181,34 +186,35 @@ en:
   activate_url: "ACTIVATE-PRO.html#english"
   footer_disclaimer: Chartwizard is charting software, not investment advice.
   footer_github: Releases on GitHub
-  footer_maker: Made by Codewizard Studio
-  og_image_alt: "Chartwizard by Codewizard Studio: the app name beside the Codewizard wave-line circle emblem."
+  footer_maker: Made by Codewizard
+  og_image_alt: "Chartwizard by Codewizard: the app name beside the Codewizard wave-line circle emblem."
   months: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
 
-  hero_tagline: IDX Chart Automatic Setup.
+  hero_tagline: IDX chart setups, found automatically.
   hero_intro: >-
-    Automatic chart setups for Indonesia Stock Exchange names — classic patterns, support/resistance, candlesticks, RSI
-    divergence, and more. Scanner lists live setups across the board. Pro unlocks screener, sector rotation versus
-    IHSG, and CSV export. Free to start.
+    Chartwizard finds chart setups on Indonesia Stock Exchange stocks automatically: classic patterns,
+    support/resistance, candlesticks, RSI divergence, and more. The scanner lists active setups across IDX: the top 5 on
+    Free, every setup and its filters on Pro. Screener, sector rotation versus IHSG, and CSV export also come with Pro.
+    Free to start.
   download_button: Download for Windows
-  download_button_mac: Download for Mac
+  download_button_mac: Download for Mac (Beta)
   version_label: Version
   size_label: Size
   system_label: System
   date_label: Released
   verify_link: Check the SHA-256
-  chart_title: Daily ARNB, a fictitious ticker on invented data — double bottom Chartwizard found, with target and invalidation.
+  chart_title: Daily chart of ARNB (a fictitious ticker on invented data) with a double bottom Chartwizard found, plus its target and invalidation.
   tape_label: Scanner sample (fictitious data)
   sample_note: >-
     The chart, scanner results and screenshots on this page use fictitious tickers, company names and prices for
     illustration, not real market data.
-  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64)
+  requirements: Windows 10/11 64-bit · macOS Apple Silicon (arm64), Beta
   all_versions: All versions
   file_fallback: Chartwizard-Setup-&lt;version&gt;.exe
 
   install_title: How to install
   install_windows_heading: Windows
-  install_mac_heading: macOS (Apple Silicon)
+  install_mac_heading: macOS Apple Silicon (Beta)
   install_steps:
     - title: Run the installer
       body: >-
@@ -242,7 +248,7 @@ en:
         needs no token, but it is <b>experimental, free and may break</b> at any time. First sync pulls history; after
         that it updates daily once the market closes.
 
-  features_title: What you use day to day
+  features_title: Key features
   features:
     - title: "Charts & patterns"
       tab: Chart
@@ -252,16 +258,16 @@ en:
         and invalidation level, volume, RSI and the pattern list.
       body: >-
         Candles, volume, RSI. MACD, Bollinger, Supertrend. Drawing tools. Auto patterns: classic, support/resistance,
-        candlestick, RSI divergence. Six themes — dark to pastel.
+        candlestick, RSI divergence. Six themes, from dark to pastel.
     - title: Scanner
       tab: Scanner
       shot: scanner
       alt: >-
-        The Chartwizard scanner on fictitious tickers: live setups with bias, status, score, volume ratio and traded
+        The Chartwizard scanner on fictitious tickers: active setups with bias, status, score, volume ratio and traded
         value.
       body: >-
-        Every live setup on IDX in one list. Filter liquidity, volume spikes, and confirmation — so you are not flipping
-        charts one by one.
+        Active setups across IDX in one list. Free shows the top 5. Pro shows every setup, with filters for liquidity,
+        volume spikes, and confirmation. You don't have to open charts one by one.
     - title: Screener
       tab: Screener
       shot: screener
@@ -270,8 +276,8 @@ en:
         value and market cap.
       pro: true
       body: >-
-        Filter by price, returns, trend, volume, and fundamentals — or jump to presets: Top Gainers, Unusual Volume, Low
-        P/E.
+        Filter by price, returns, trend, volume, and fundamentals, or start from a preset: Top Gainers, Unusual Volume,
+        Low P/E.
     - title: Sector rotation
       tab: Sectors
       shot: sectors
@@ -294,8 +300,8 @@ en:
   buy_monthly: Pay monthly
   buy_yearly: Pay yearly
   pro_pays_for: >-
-    The Pro price pays for Chartwizard's analysis features, not for data. Every plan downloads from the data provider
-    you choose, under your own agreement with it.
+    With Pro, you pay for Chartwizard's analysis features, not for data. On every plan, data comes from the provider you
+    choose, under your own agreement with that provider.
   seats: One licence covers 2 machines. Payment through Lynk.id.
   activate_link: How to activate Pro
 
@@ -328,7 +334,7 @@ en:
         Uninstalling keeps that folder, so reinstalling picks up where you left off.
     - q: Which systems are supported?
       a: >-
-        Windows 10 and 11, 64-bit, plus macOS Apple Silicon (arm64). No Intel Mac or Linux build yet.
+        Windows 10 and 11, 64-bit, plus macOS Apple Silicon (arm64) as a Beta. No Intel Mac or Linux build yet.
 
   verify_title: Check your download
   verify_hash_label: "The SHA-256 of this version's installer:"

@@ -20,7 +20,7 @@ Retail traders on the Indonesia Stock Exchange (IDX/BEI), mostly on Windows 10/1
 
 The repository holds Chartwizard's installers and its public documentation; it has no source code. This site is where a trader:
 
-1. **Downloads** the app: Windows installer (newest release) or the macOS arm64 DMG, with version, size, date and SHA-256 in view.
+1. **Downloads** the app: Windows installer (newest release) or the macOS arm64 DMG (Beta), with version, size, date and SHA-256 in view.
 2. **Installs** it past the unsigned-app warnings (SmartScreen, Gatekeeper) and picks a data provider.
 3. **Decides on and activates Pro**: Free and Pro compared, Pro bought on Lynk.id (monthly or yearly), then activated in the app with the purchase email and the Lynk.id order ID (`ACTIVATE-PRO.md`).
 4. **Learns the app** from the tutorials (`TUTORIALS-ID.md`, `TUTORIALS.md`): first sync, reading a chart, indicators, drawings, the Scanner, the Screener and sector rotation (Pro), backup and restore, shortcuts, troubleshooting.
