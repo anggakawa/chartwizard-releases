@@ -9,7 +9,26 @@
   <meta name="description" content="{{ t.description }}">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
-  <link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="48x48">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  {%- capture share_title %}{% if page.title %}{{ page.title }} · {% endif %}Chartwizard{% endcapture %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="Chartwizard">
+  <meta property="og:title" content="{{ share_title }}">
+  <meta property="og:description" content="{{ t.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="{% if lang == 'en' %}en_US{% else %}id_ID{% endif %}">
+  <meta property="og:image" content="{{ '/assets/og.png' | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ t.og_image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ share_title }}">
+  <meta name="twitter:description" content="{{ t.description }}">
+  <meta name="twitter:image" content="{{ '/assets/og.png' | absolute_url }}">
   <link rel="preload" href="{{ '/assets/fonts/instrument-sans-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
   <script>document.documentElement.classList.add("js");</script>
@@ -43,6 +62,7 @@
     <div class="wrap footer-row">
       <p>{{ t.footer_disclaimer }}</p>
       <p><a class="garis" href="https://github.com/anggakawa/chartwizard-releases/releases">{{ t.footer_github }}</a></p>
+      <p><a class="maker" href="https://codewizard.id/"><img src="{{ '/assets/codewizard-icon.svg' | relative_url }}" alt="" width="16" height="16"><span class="garis">{{ t.footer_maker }}</span></a></p>
     </div>
   </footer>
 

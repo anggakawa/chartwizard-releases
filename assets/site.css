@@ -353,6 +353,23 @@ main:has(> .closer) + .site-footer {
   margin: 0;
 }
 
+/* The studio's mark, small, beside its name. */
+.maker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.maker img {
+  flex: none;
+  display: block;
+}
+
+.maker:hover .garis,
+.maker:focus-visible .garis {
+  animation: wipe var(--duration-wipe) var(--ease-swap);
+}
+
 /* Buttons: the download is the one filled shape on the page; everything else is outlined or a link. */
 
 .btn {
